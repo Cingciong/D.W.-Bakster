@@ -1,0 +1,36 @@
+<template>
+
+        <div class="text-center min-h-screen hero-bg gap-5">
+            <h1 class="text-4xl font-bold text-dark sm:text-5xl lg:text-6xl">
+                {{ $t('home.welcome') }} <span class="text-teal">Bakster</span>
+            </h1>
+            <p class=" text-xl text-white max-w-3xl mx-auto p-4 bg-gray-700/20 rounded-3xl">
+               {{ $t('home.subtitle') }}
+            </p>
+            <router-link
+                to="/pokoje"
+                class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-500 hover:bg-primary-600 transition-colors duration-200"
+            >
+                {{ $t('home.viewRooms') }}
+            </router-link>
+        </div>
+
+</template>
+
+<script setup>
+// Strona główna - Home page
+</script>
+
+<style scoped>
+.hero-bg {
+  background-image: url('https://picsum.photos/id/16/2500/1667');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+</style>
