@@ -11,18 +11,6 @@ const props = defineProps({
     type: String,
     required: true
   },
-  price: {
-    type: String,
-    required: true
-  },
-  currency: {
-    type: String,
-    default: '$'
-  },
-  period: {
-    type: String,
-    default: '/night'
-  },
   imgLink: {
     type: String,
     required: true
@@ -66,9 +54,10 @@ const handleBooking = () => {
     <!-- Room Image Section -->
     <div class="h-48 overflow-hidden">
       <img
+        @click="handleBooking"
         :src="imgLink"
         :alt="title"
-        class="w-full h-full object-cover"
+        class=" w-full object-cover roomimg cursor-pointer h-full transition-transform duration-300 transform hover:scale-105"
       />
     </div>
 
@@ -82,22 +71,11 @@ const handleBooking = () => {
         <slot></slot>
       </ul>
 
-      <!-- Price and Book Button -->
-      <div class="flex justify-between items-center mt-auto">
-        <span
-          class="text-2xl font-bold"
-          :style="color.startsWith('#') ? `color: ${color}` : ''"
-          :class="!color.startsWith('#') ? `text-${color}-600` : ''"
-        >
-          {{ currency }}{{ price }}{{ period }}
-        </span>
+      <!-- Book Button -->
+      <div class="flex justify-end items-center mt-auto">
         <button
           @click="handleBooking"
-          class="px-4 py-2 text-white rounded transition-all duration-300 hover:shadow-lg hover:transform hover:scale-105"
-          :style="color.startsWith('#') ? `background-color: ${color}; filter: brightness(1);` : ''"
-          :class="!color.startsWith('#') ? `bg-${color}-600 hover:bg-${color}-700` : ''"
-          @mouseover="$event.target.style.filter = 'brightness(0.9)'"
-          @mouseout="$event.target.style.filter = 'brightness(1)'"
+          class="px-4 py-2  text-white rounded transition-all duration-300 bg-teal-600 hover:bg-teal-700 cursor-pointer hover:shadow-lg hover:transform hover:scale-105"
         >
           Zobacz Pokój
         </button>
@@ -107,5 +85,7 @@ const handleBooking = () => {
 </template>
 
 <style scoped>
-/* Add any custom styles if needed */
+.roomimg {
+    overflow-clip-margin: unset;
+}
 </style>

@@ -12,7 +12,7 @@ export default {
   // Home page
   home: {
     welcome: 'Witamy w',
-    subtitle: 'Odkryj komfort i elegancję w naszym wyjątkowym hotelu. Doskonała lokalizacja, nowoczesne pokoje i niezrównana obsługa.',
+    subtitle: 'Odkryj komfort i elegancję w naszym wyjątkowym hotelu. Doskonała lokalizacja, nowoczesne pokoje blisko morza i niezrównana obsługa.',
     viewRooms: 'Zobacz Pokoje'
   },
 
@@ -43,7 +43,19 @@ export default {
     quadruple: 'Pokój czteroosobowy',
     apartment: 'Apartament dwupoziomowy',
     bookNow: 'Zarezerwuj',
-    pricePerNight: 'za noc'
+    pricePerNight: 'za noc',
+    pricing: {
+      title: 'Cennik',
+      description: 'Nasze ceny są zróżnicowane pod względem sezonu i przedstawiają się następująco:',
+      lowSeason: 'sezon niski - maj, czerwiec, wrzesień od 100,00 zł za dobę za osobę ze śniadaniem',
+      highSeason: 'sezon wysoki - lipiec sierpień od 120,00 zł za dobę za osobę ze śniadaniem',
+      breakfast: 'Śniadanie serwowane jest w formie szwedzkiego stołu.',
+      disclaimer: 'Podane ceny są orientacyjne i mogą podlegać negocjacjom w zależności od ilości osób i długości pobytu.',
+      localTax: 'W cenie nie ujęto obowiązującej opłaty miejscowej, której wysokość ogłasza Uchwała Rady Miejskiej Władysławowa dostępna w Recepcji Pensjonat Bakster',
+      vat: 'Jesteśmy płatnikiem VAT i wystawiamy faktury za pobyt w naszym obiekcie.',
+      currentSeason: 'Aktualny sezon:',
+      pricePerPersonPerNight: 'zł za osobę za noc'
+    }
   },
 
   // Gallery page

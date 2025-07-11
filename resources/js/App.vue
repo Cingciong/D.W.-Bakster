@@ -1,20 +1,34 @@
 <script setup>
-// Main App component
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 </script>
 
 <template>
-  <div class="app">
-    <!-- Fixed Navbar Component -->
+  <div id="app">
     <Navbar />
-
-    <!-- Main Content with top padding for fixed navbar -->
-    <main class="">
+    <main>
       <router-view />
     </main>
-
-    <!-- Footer Component -->
     <Footer />
   </div>
 </template>
+
+<style>
+/* Global styles */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+</style>

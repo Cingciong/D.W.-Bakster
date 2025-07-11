@@ -10,14 +10,15 @@ const toggleMenu = () => {
 </script>
 
 <template>
-  <nav class="fixed top-0 left-0 right-0 bg-white/10 backdrop-blur-md shadow-lg z-50">
+  <nav class="fixed top-0 left-0 right-0 bg-white/10 backdrop-blur-md shadow-lg z-50 select-none ">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16">
 
         <div class="flex items-center">
-          <a href="/" class="text-2xl font-bold  text-teal-950">
-            D.W. Bakster
-          </a>
+            <a href="/" class="text-2xl font-bold flex flex-row gap-3 py-auto  text-teal">
+                <img :src="'/img/logo.svg'" alt="D.W. Bakster Logo" class="h-8 w-8  hover:opacity-55 duration-300">
+                <span class="text-2xl font-bold hover:text-teal/55 duration-300 text-teal my-auto ">Pensjonat Bakster</span>
+            </a>
         </div>
 
         <!-- Desktop Navigation -->
@@ -159,5 +160,13 @@ const toggleMenu = () => {
 .router-link-active {
   color: #007481 !important;
   background-color: #f0f9ff !important;
+}
+
+.logo-teal {
+  filter: brightness(0) saturate(100%) invert(33%) sepia(73%) saturate(1040%) hue-rotate(164deg) brightness(94%) contrast(101%);
+}
+
+.logo-teal:hover {
+  filter: brightness(0) saturate(100%) invert(25%) sepia(100%) saturate(1500%) hue-rotate(170deg) brightness(90%) contrast(105%);
 }
 </style>

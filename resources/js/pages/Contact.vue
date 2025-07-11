@@ -1,12 +1,10 @@
 <template>
   <div class="min-h-screen bg-gray-50">
     <!-- Header -->
-    <div class="hero-bg min-h-[400px] flex flex-col justify-center items-center text-center">
-      <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-        <h1 class="text-4xl font-bold text-white sm:text-5xl lg:text-6xl">Kontakt</h1>
-        <p class="mt-4 text-xl text-white max-w-3xl mx-auto bg-white/30 rounded-3xl px-6 py-3">Skontaktuj się z nami</p>
-      </div>
-    </div>
+    <PageHeader
+      title="Kontakt"
+      description="Skontaktuj się z nami"
+    />
 
     <!-- Contact Content -->
     <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
@@ -52,7 +50,7 @@
               </div>
               <div class="ml-4">
                 <h3 class="text-lg font-semibold text-gray-900">Godziny Recepcji</h3>
-                <p class="text-gray-600">24/7 - zawsze do Twojej dyspozycji</p>
+                <p class="text-gray-600">7-22 zawsze do Twojej dyspozycji</p>
               </div>
             </div>
           </div>
@@ -185,6 +183,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import PageHeader from '../components/PageHeader.vue'
 
 // Form data
 const form = ref({

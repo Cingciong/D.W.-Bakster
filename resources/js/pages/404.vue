@@ -1,118 +1,81 @@
+<script setup>
+import PageHeader from '../components/PageHeader.vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const goHome = () => {
+  router.push('/')
+}
+
+const goBack = () => {
+  router.back()
+}
+</script>
+
 <template>
   <div class="min-h-screen bg-gray-50">
     <!-- Header -->
-    <div class="hero-bg min-h-[400px] flex flex-col justify-center items-center text-center">
-      <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-        <h1 class="text-6xl font-bold text-white sm:text-7xl lg:text-8xl">404</h1>
-        <p class="mt-4 text-xl text-white max-w-3xl mx-auto bg-white/30 rounded-3xl px-6 py-3">Strona nie została znaleziona</p>
-      </div>
-    </div>
+    <PageHeader
+      title="Strona nie znaleziona"
+      description="404 - Nie mogliśmy znaleźć tej strony"
+    />
 
     <!-- 404 Content -->
-    <div class="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <div class="bg-white rounded-lg shadow-md p-12 max-w-2xl mx-auto">
-          <div class="w-32 h-32 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-8">
-            <span class="text-white text-6xl">😕</span>
-          </div>
+    <div class="max-w-3xl mx-auto px-4 py-16 sm:px-6 lg:px-8 text-center">
+      <div class="bg-white rounded-lg shadow-md p-8">
+        <div class="text-6xl mb-8">🏨</div>
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Ups! Strona nie istnieje</h2>
+        <p class="text-gray-600 mb-8">
+          Przepraszamy, ale strona której szukasz nie została znaleziona.
+          Możliwe, że została przeniesiona lub nie istnieje.
+        </p>
 
-          <h2 class="text-3xl font-bold text-gray-900 mb-4">Ups! Coś poszło nie tak</h2>
-          <p class="text-lg text-gray-600 mb-8">
-            Przepraszamy, ale strona której szukasz nie istnieje lub została przeniesiona.
-          </p>
-
-          <div class="space-y-4">
-            <p class="text-gray-600">Możesz spróbować:</p>
-            <ul class="text-left text-gray-600 space-y-2 max-w-md mx-auto">
-              <li class="flex items-center">
-                <span class="text-blue-500 mr-2">•</span>
-                Sprawdzić adres URL pod kątem błędów
-              </li>
-              <li class="flex items-center">
-                <span class="text-blue-500 mr-2">•</span>
-                Wrócić do strony głównej
-              </li>
-              <li class="flex items-center">
-                <span class="text-blue-500 mr-2">•</span>
-                Skorzystać z nawigacji powyżej
-              </li>
-            </ul>
-          </div>
-
-          <div class="mt-8 space-x-4">
-            <router-link
-              to="/"
-              class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-500 hover:bg-primary-600 transition-colors duration-200"
-            >
-              🏠 Strona Główna
-            </router-link>
-
-            <router-link
-              to="/pokoje"
-              class="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-colors duration-200"
-            >
-              🛏️ Zobacz Pokoje
-            </router-link>
-          </div>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button
+            @click="goHome"
+            class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            Wróć na stronę główną
+          </button>
+          <button
+            @click="goBack"
+            class="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
+          >
+            Wróć do poprzedniej strony
+          </button>
         </div>
+      </div>
 
-        <!-- Popular Pages -->
-        <div class="mt-16">
-          <h3 class="text-2xl font-bold text-gray-900 mb-8">Popularne strony</h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <router-link
-              to="/"
-              class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 group"
-            >
-              <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-200">
-                <span class="text-white text-2xl">🏠</span>
-              </div>
-              <h4 class="font-semibold text-gray-900">Strona Główna</h4>
-              <p class="text-sm text-gray-600 mt-2">Powrót do głównej strony</p>
-            </router-link>
-
-            <router-link
-              to="/pokoje"
-              class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 group"
-            >
-              <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-200">
-                <span class="text-white text-2xl">🛏️</span>
-              </div>
-              <h4 class="font-semibold text-gray-900">Pokoje</h4>
-              <p class="text-sm text-gray-600 mt-2">Zobacz nasze pokoje</p>
-            </router-link>
-
-            <router-link
-              to="/galeria"
-              class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 group"
-            >
-              <div class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-200">
-                <span class="text-white text-2xl">📷</span>
-              </div>
-              <h4 class="font-semibold text-gray-900">Galeria</h4>
-              <p class="text-sm text-gray-600 mt-2">Zobacz nasze wnętrza</p>
-            </router-link>
-
-            <router-link
-              to="/kontakt"
-              class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 group"
-            >
-              <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-200">
-                <span class="text-white text-2xl">📞</span>
-              </div>
-              <h4 class="font-semibold text-gray-900">Kontakt</h4>
-              <p class="text-sm text-gray-600 mt-2">Skontaktuj się z nami</p>
-            </router-link>
+      <!-- Sekcja kontaktowa -->
+      <div class="mt-8 bg-white rounded-lg shadow-md p-8 text-center">
+        <h3 class="text-xl font-bold text-gray-800 mb-4">Potrzebujesz pomocy?</h3>
+        <p class="text-gray-600 mb-6">Skontaktuj się z nami bezpośrednio</p>
+        <div class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-8 text-gray-700">
+          <div class="flex items-center">
+            <svg class="w-5 h-5 mr-2 text-teal-600" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+            </svg>
+            <span>ul. Gawędy 14, 84-120 Władysławowo</span>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-5 h-5 mr-2 text-teal-600" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            <span>058/675-24-04 | +48 733 915 030</span>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-5 h-5 mr-2 text-teal-600" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+            <span>bakster@bakster.pl</span>
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
-
-<script setup>
-// Strona 404 - 404 error page
-</script>
 
 <style scoped>
 .hero-bg {

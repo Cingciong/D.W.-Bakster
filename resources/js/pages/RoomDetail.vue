@@ -2,6 +2,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
+import PageHeader from '../components/PageHeader.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -39,9 +40,11 @@ const roomTypes = {
       'Beach set: blanket, windbreak, lounger'
     ],
     images: [
-      'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop'
+      '/img/1-osobowe/untitled-1.JPG',
+      '/img/1-osobowe/untitled-2.JPG',
+      '/img/1-osobowe/untitled-3.JPG',
+      '/img/1-osobowe/untitled-4.JPG',
+      '/img/1-osobowe/untitled-5.JPG'
     ],
     color: '#3b82f6'
   },
@@ -77,9 +80,14 @@ const roomTypes = {
       'Beach set: blanket, windbreak, lounger'
     ],
     images: [
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop'
+      '/img/2-osobowe/untitled.JPG',
+      '/img/2-osobowe/untitled-2.JPG',
+      '/img/2-osobowe/untitled-3.JPG',
+      '/img/2-osobowe/untitled-4.JPG',
+      '/img/2-osobowe/untitled-5.JPG',
+      '/img/2-osobowe/untitled-6.JPG',
+      '/img/2-osobowe/untitled-7.JPG',
+      '/img/2-osobowe/untitled-8.JPG'
     ],
     color: '#10b981'
   },
@@ -113,9 +121,13 @@ const roomTypes = {
       'Coffee and beach set'
     ],
     images: [
-      'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800&h=600&fit=crop'
+      '/img/2-osobowy-economy/untitled-1.JPG',
+      '/img/2-osobowy-economy/untitled-2.JPG',
+      '/img/2-osobowy-economy/untitled-3.JPG',
+      '/img/2-osobowy-economy/untitled-4.JPG',
+      '/img/2-osobowy-economy/untitled-5.JPG',
+      '/img/2-osobowy-economy/untitled-6.JPG',
+      '/img/2-osobowy-economy/untitled-7.JPG'
     ],
     color: '#6366f1'
   },
@@ -149,9 +161,14 @@ const roomTypes = {
       'Beach set: blanket, windbreak, lounger'
     ],
     images: [
-      'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop'
+      '/img/3-osobowy/untitled-1.JPG',
+      '/img/3-osobowy/untitled-2.JPG',
+      '/img/3-osobowy/untitled-3.JPG',
+      '/img/3-osobowy/untitled-4.JPG',
+      '/img/3-osobowy/untitled-5.JPG',
+      '/img/3-osobowy/untitled-6.JPG',
+      '/img/3-osobowy/untitled-7.JPG',
+      '/img/3-osobowy/untitled-8.JPG'
     ],
     color: '#059669'
   },
@@ -183,9 +200,10 @@ const roomTypes = {
       'Safe'
     ],
     images: [
-      'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop'
+      '/img/3-osobowy-standard/untitled-1.JPG',
+      '/img/3-osobowy-standard/untitled-2.JPG',
+      '/img/3-osobowy-standard/untitled-3.JPG',
+      '/img/3-osobowy-standard/untitled-4.JPG'
     ],
     color: '#7c3aed'
   },
@@ -289,9 +307,14 @@ const roomTypes = {
       'TV, fridge, kettle, full equipment'
     ],
     images: [
-      'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop'
+      '/img/apartament/untitled-1.JPG',
+      '/img/apartament/untitled-2.JPG',
+      '/img/apartament/untitled-3.JPG',
+      '/img/apartament/untitled-4.JPG',
+      '/img/apartament/untitled-5.JPG',
+      '/img/apartament/untitled-6.JPG',
+      '/img/apartament/untitled-7.JPG',
+      '/img/apartament/untitled-8.JPG'
     ],
     color: '#dc2626'
   }
@@ -322,8 +345,8 @@ const nextImage = () => {
 
 const prevImage = () => {
   if (currentRoom.value) {
-    currentImageIndex.value = currentImageIndex.value === 0 
-      ? currentRoom.value.images.length - 1 
+    currentImageIndex.value = currentImageIndex.value === 0
+      ? currentRoom.value.images.length - 1
       : currentImageIndex.value - 1
   }
 }
@@ -342,60 +365,17 @@ const bookRoom = () => {
 <template>
   <div v-if="currentRoom" class="min-h-screen bg-gray-50">
     <!-- Hero Section -->
-    <div class="hero-bg min-h-[400px] flex flex-col justify-center items-center text-center relative">
-      <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-      <div class="relative z-10 max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-        <h1 class="text-4xl font-bold text-white sm:text-5xl lg:text-6xl mb-4">{{ currentRoom.title }}</h1>
-        <p class="text-xl text-white max-w-3xl mx-auto bg-white/30 rounded-3xl px-6 py-3">{{ currentRoom.description }}</p>
-      </div>
-    </div>
+    <PageHeader
+      :title="currentRoom.title"
+      :description="currentRoom.description"
+    />
 
     <!-- Breadcrumb Navigation -->
-    <div class="bg-white shadow-sm">
-      <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
-        <nav class="flex" aria-label="Breadcrumb">
-          <ol class="inline-flex items-center space-x-1 md:space-x-3">
-            <li class="inline-flex items-center">
-              <router-link 
-                to="/" 
-                class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
-              >
-                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
-                </svg>
-                {{ $t('breadcrumb.home') }}
-              </router-link>
-            </li>
-            <li>
-              <div class="flex items-center">
-                <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
-                </svg>
-                <router-link 
-                  to="/pokoje" 
-                  class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 transition-colors"
-                >
-                  {{ $t('breadcrumb.rooms') }}
-                </router-link>
-              </div>
-            </li>
-            <li aria-current="page">
-              <div class="flex items-center">
-                <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
-                </svg>
-                <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2">{{ currentRoom.title }}</span>
-              </div>
-            </li>
-          </ol>
-        </nav>
-      </div>
-    </div>
 
     <!-- Main Content -->
     <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        
+
         <!-- Room Details -->
         <div class="lg:col-span-2">
           <!-- Image Gallery -->
@@ -403,25 +383,25 @@ const bookRoom = () => {
             <h2 class="text-2xl font-bold text-gray-900 mb-4">Galeria</h2>
             <div class="relative">
               <!-- Main Image -->
-              <div class="relative h-96 rounded-lg overflow-hidden">
-                <img 
-                  :src="currentRoom.images[currentImageIndex]" 
+              <div class="relative h-96 rounded-lg bg-gray-100 shadow-xl  overflow-hidden">
+                <img
+                  :src="currentRoom.images[currentImageIndex]"
                   :alt="currentRoom.title"
-                  class="w-full h-full object-cover"
+                  class="w-auto h-full mx-auto bg-gray-300 object-cover transition-transform duration-300"
                 />
-                
+
                 <!-- Navigation Arrows -->
-                <button 
+                <button
                   @click="prevImage"
-                  class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-2 transition-all duration-200"
+                  class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-gray-300/80  rounded-full p-2 transition-all duration-200"
                 >
                   <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                   </svg>
                 </button>
-                <button 
+                <button
                   @click="nextImage"
-                  class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-2 transition-all duration-200"
+                  class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80  hover:bg-gray-300/80 rounded-full p-2 transition-all duration-200"
                 >
                   <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -436,15 +416,15 @@ const bookRoom = () => {
 
               <!-- Thumbnails -->
               <div class="grid grid-cols-3 gap-2 mt-4">
-                <button 
-                  v-for="(image, index) in currentRoom.images" 
+                <button
+                  v-for="(image, index) in currentRoom.images"
                   :key="index"
                   @click="setCurrentImage(index)"
                   class="relative h-24 rounded-lg overflow-hidden transition-all duration-200"
                   :class="currentImageIndex === index ? 'ring-4 ring-blue-500' : 'hover:opacity-75'"
                 >
-                  <img 
-                    :src="image" 
+                  <img
+                    :src="image"
                     :alt="`${currentRoom.title} - zdjęcie ${index + 1}`"
                     class="w-full h-full object-cover"
                   />
@@ -458,8 +438,8 @@ const bookRoom = () => {
             <h2 class="text-2xl font-bold text-gray-900 mb-4">Wyposażenie</h2>
             <div class="bg-white rounded-lg shadow-md p-6">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div 
-                  v-for="feature in currentRoom.features" 
+                <div
+                  v-for="feature in currentRoom.features"
                   :key="feature"
                   class="flex items-center"
                 >
@@ -475,9 +455,9 @@ const bookRoom = () => {
             <h2 class="text-2xl font-bold text-gray-900 mb-4">Informacje Dodatkowe</h2>
             <div class="prose max-w-none text-gray-600">
               <p class="mb-4">{{ currentRoom.description }}</p>
-              <p>Ten pokój jest idealny dla {{ currentRoom.capacity }} {{ currentRoom.capacity === 1 ? 'osoby' : 'osób' }} 
-                 i oferuje powierzchnię {{ currentRoom.size }}. 
-                 {{ currentRoom.bedType }} zapewnia komfortowy sen, 
+              <p>Ten pokój jest idealny dla {{ currentRoom.capacity }} {{ currentRoom.capacity === 1 ? 'osoby' : 'osób' }}
+                 i oferuje powierzchnię {{ currentRoom.size }}.
+                 {{ currentRoom.bedType }} zapewnia komfortowy sen,
                  a wszystkie niezbędne udogodnienia sprawią, że Twój pobyt będzie niezapomniany.</p>
             </div>
           </div>
@@ -486,13 +466,6 @@ const bookRoom = () => {
         <!-- Booking Sidebar -->
         <div class="lg:col-span-1">
           <div class="bg-white rounded-lg shadow-md p-6 sticky top-8">
-            <!-- Price -->
-            <div class="text-center mb-6">
-              <div class="text-3xl font-bold" :style="`color: ${currentRoom.color}`">
-                {{ currentRoom.price }} zł
-              </div>
-              <div class="text-gray-500">za noc</div>
-            </div>
 
             <!-- Quick Info -->
             <div class="space-y-3 mb-6">
@@ -511,12 +484,12 @@ const bookRoom = () => {
             </div>
 
             <!-- Booking Button -->
-            <button 
+            <button
               @click="bookRoom"
-              class="w-full py-3 px-6 text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:transform hover:scale-105"
-              :style="`background-color: ${currentRoom.color}`"
+              class="w-full py-3 px-6 text-white font-semibold rounded-lg transition-all bg-secondary-500 duration-300 cursor-pointer hover:bg-secondary-500/60 hover:shadow-lg hover:transform hover:scale-105"
+
             >
-              Zarezerwuj Pokój
+              Skontaktuj się
             </button>
 
             <!-- Contact Info -->
@@ -531,8 +504,8 @@ const bookRoom = () => {
 
           <!-- Navigation -->
           <div class="mt-6">
-            <router-link 
-              to="/pokoje" 
+            <router-link
+              to="/pokoje"
               class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-200"
             >
               <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

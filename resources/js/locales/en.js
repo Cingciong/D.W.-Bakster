@@ -43,7 +43,19 @@ export default {
     quadruple: 'Quadruple room',
     apartment: 'Two-level apartment',
     bookNow: 'Book Now',
-    pricePerNight: 'per night'
+    pricePerNight: 'per night',
+    pricing: {
+      title: 'Pricing',
+      description: 'Our prices are seasonally differentiated and are as follows:',
+      lowSeason: 'low season - May, June, September from 100.00 PLN per day per person with breakfast',
+      highSeason: 'high season - July August from 120.00 PLN per day per person with breakfast',
+      breakfast: 'Breakfast is served buffet style.',
+      disclaimer: 'The prices given are indicative and may be subject to negotiation depending on the number of people and length of stay.',
+      localTax: 'The price does not include the mandatory local tax, the amount of which is announced by the Resolution of the City Council of Władysławowo available at the Reception of Pensjonat Bakster',
+      vat: 'We are VAT payers and issue invoices for stays at our facility.',
+      currentSeason: 'Current season:',
+      pricePerPersonPerNight: 'PLN per person per night'
+    }
   },
 
   // Gallery page
