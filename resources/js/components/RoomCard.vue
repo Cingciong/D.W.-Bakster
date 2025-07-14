@@ -1,5 +1,6 @@
 <script setup>
 import { useRouter } from 'vue-router'
+import { onMounted } from 'vue'
 
 // Define simplified props for the room card component
 const props = defineProps({
@@ -31,9 +32,6 @@ const props = defineProps({
 
 const router = useRouter()
 
-// Emit event when button is clicked
-const emit = defineEmits(['book-room'])
-
 const handleBooking = () => {
   if (props.roomSlug) {
     // Navigate to room detail page
@@ -54,7 +52,6 @@ const handleBooking = () => {
     <!-- Room Image Section -->
     <div class="h-48 overflow-hidden">
       <img
-        @click="handleBooking"
         :src="imgLink"
         :alt="title"
         class=" w-full object-cover roomimg cursor-pointer h-full transition-transform duration-300 transform hover:scale-105"
@@ -75,7 +72,7 @@ const handleBooking = () => {
       <div class="flex justify-end items-center mt-auto">
         <button
           @click="handleBooking"
-          class="px-4 py-2  text-white rounded transition-all duration-300 bg-teal-600 hover:bg-teal-700 cursor-pointer hover:shadow-lg hover:transform hover:scale-105"
+          class="px-4 py-2  text-white rounded transition-all duration-300 bg-teal-600 hover:bg-teal-700 cursor-pointer font-semibold hover:shadow-lg hover:transform hover:scale-105"
         >
           Zobacz Pokój
         </button>

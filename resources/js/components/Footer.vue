@@ -17,9 +17,10 @@ const currentYear = computed(() => new Date().getFullYear())
           <h3 class="text-lg font-semibold mb-4">Podstrony</h3>
           <ul class="space-y-2">
             <li><router-link to="/" class="text-gray-300 hover:text-white transition-colors">Główna</router-link></li>
-            <li><router-link to="/rooms" class="text-gray-300 hover:text-white transition-colors">Pokoje</router-link></li>
-            <li><router-link to="/gallery" class="text-gray-300 hover:text-white transition-colors">Galeria</router-link></li>
-            <li><router-link to="/contact" class="text-gray-300 hover:text-white transition-colors">Kontakt</router-link></li>
+            <li><router-link to="/pokoje" class="text-gray-300 hover:text-white transition-colors">Pokoje</router-link></li>
+            <li><router-link to="/galeria" class="text-gray-300 hover:text-white transition-colors">Galeria</router-link></li>
+            <li><router-link to="/kontakt" class="text-gray-300 hover:text-white transition-colors">Kontakt</router-link></li>
+             <li><router-link to="/regulamin" class="text-gray-300 hover:text-white transition-colors">Regulamin</router-link></li>
           </ul>
         </div>
 
@@ -33,8 +34,9 @@ const currentYear = computed(() => new Date().getFullYear())
         </div>
       </div>
 
-      <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-        <p class="text-gray-300">&copy; {{ currentYear }} Bakster Hotel. Wszelkie prawa zastrzeżone.</p>
+      <div class="border-t border-gray-700 text-gray-300 mt-8 pt-8 text-center ">
+        <p class=" mb-1">&copy; {{ currentYear }} Bakster Hotel. Wszelkie prawa zastrzeżone.</p>
+        <p class="">Strona zrobiona przez <a href="https://www.igormaciejak.org/" class="text-teal font-semibold hover:opacity-55 duration-300">Igor Maciejak</a>.</p>
       </div>
     </div>
   </footer>

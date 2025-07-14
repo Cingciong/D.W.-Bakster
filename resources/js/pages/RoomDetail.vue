@@ -12,10 +12,7 @@ const { t } = useI18n()
 const roomTypes = {
   'jednosobowy': {
     title: 'Pokój Jednosobowy',
-    englishTitle: 'Single Room',
     description: 'Komfortowy pokój dla jednej osoby z widokiem na ogród. Idealny na spokojny wypoczynek nad morzem.',
-    englishDescription: 'Comfortable room for one person with garden view. Perfect for peaceful seaside relaxation.',
-    price: '100-180',
     capacity: 1,
     size: '14 m²',
     bedType: 'Łóżko pojedyncze',
@@ -25,19 +22,9 @@ const roomTypes = {
       'Łóżko pojedyncze',
       'Prywatna łazienka z prysznicem',
       'Bezpłatne Wi-Fi',
-      'TV z kanałami naziemnymi i satelitarnymi',
-      'Mini-lodówka, czajnik, zestaw kawowy',
+      'Płaski telewizor z kanałami naziemnymi i satelitarnymi',
+      'Mini-lodówka, czajnik',
       'Zestaw plażowy: koc, parawan, leżak'
-    ],
-    englishFeatures: [
-      '1 person',
-      '14 m²',
-      'Single bed',
-      'Private bathroom with shower',
-      'Free Wi-Fi',
-      'TV with terrestrial and satellite channels',
-      'Mini-fridge, kettle, coffee set',
-      'Beach set: blanket, windbreak, lounger'
     ],
     images: [
       '/img/1-osobowe/untitled-1.JPG',
@@ -45,15 +32,11 @@ const roomTypes = {
       '/img/1-osobowe/untitled-3.JPG',
       '/img/1-osobowe/untitled-4.JPG',
       '/img/1-osobowe/untitled-5.JPG'
-    ],
-    color: '#3b82f6'
+    ]
   },
   'dwuosobowy': {
     title: 'Pokój Dwuosobowy',
-    englishTitle: 'Double Room',
     description: 'Przytulny pokój dla dwóch osób z balkonem i podwójnym łóżkiem.',
-    englishDescription: 'Cozy room for two people with balcony and double bed.',
-    price: '200-320',
     capacity: 2,
     size: '16-23 m²',
     bedType: 'Łóżko podwójne',
@@ -64,20 +47,9 @@ const roomTypes = {
       'Prywatna łazienka (część z oknem)',
       'Balkon lub okno balkonowe',
       'Bezpłatne Wi-Fi',
-      'TV z płaskim ekranem',
-      'Mini-lodówka, czajnik, zestaw kawowy',
+      'Płaski telewizor',
+      'Mini-lodówka, czajnik',
       'Zestaw plażowy: koc, parawan, leżak'
-    ],
-    englishFeatures: [
-      '2 people',
-      '16-23 m²',
-      'Double bed',
-      'Private bathroom (some with window)',
-      'Balcony or balcony window',
-      'Free Wi-Fi',
-      'Flat screen TV',
-      'Mini-fridge, kettle, coffee set',
-      'Beach set: blanket, windbreak, lounger'
     ],
     images: [
       '/img/2-osobowe/untitled.JPG',
@@ -88,15 +60,11 @@ const roomTypes = {
       '/img/2-osobowe/untitled-6.JPG',
       '/img/2-osobowe/untitled-7.JPG',
       '/img/2-osobowe/untitled-8.JPG'
-    ],
-    color: '#10b981'
+    ]
   },
   'dwuosobowy-economy': {
     title: 'Pokój Dwuosobowy Economy',
-    englishTitle: 'Double Room Economy',
     description: 'Funkcjonalny pokój dla dwóch osób z podstawowym wyposażeniem i dostępem do wszystkich udogodnień.',
-    englishDescription: 'Functional room for two people with basic equipment and access to all amenities.',
-    price: '150-220',
     capacity: 2,
     size: '16 m²',
     bedType: 'Łóżko podwójne',
@@ -106,19 +74,8 @@ const roomTypes = {
       'Łóżko podwójne',
       'Prywatna łazienka z prysznicem',
       'Bezpłatne Wi-Fi',
-      'TV',
-      'Mini-lodówka, czajnik',
-      'Zestaw kawowy i plażowy'
-    ],
-    englishFeatures: [
-      '2 people',
-      '16 m²',
-      'Double bed',
-      'Private bathroom with shower',
-      'Free Wi-Fi',
-      'TV',
-      'Mini-fridge, kettle',
-      'Coffee and beach set'
+      'Płaski telewizor',
+      'Mini-lodówka, czajnik'
     ],
     images: [
       '/img/2-osobowy-economy/untitled-1.JPG',
@@ -128,15 +85,11 @@ const roomTypes = {
       '/img/2-osobowy-economy/untitled-5.JPG',
       '/img/2-osobowy-economy/untitled-6.JPG',
       '/img/2-osobowy-economy/untitled-7.JPG'
-    ],
-    color: '#6366f1'
+    ]
   },
   'trzyosobowy': {
     title: 'Pokój Trzyosobowy',
-    englishTitle: 'Triple Room',
     description: 'Przestronny pokój dla trzech osób z balkonem i wygodnymi łóżkami.',
-    englishDescription: 'Spacious room for three people with balcony and comfortable beds.',
-    price: '280-400',
     capacity: 3,
     size: '29 m²',
     bedType: 'Łóżko podwójne + łóżko pojedyncze',
@@ -146,19 +99,9 @@ const roomTypes = {
       'Łóżko podwójne + łóżko pojedyncze',
       'Prywatna łazienka (część z oknem)',
       'Balkon',
-      'TV z kanałami satelitarnymi',
-      'Mini-lodówka, czajnik, zestaw kawowy',
+      'Płaski telewizor z kanałami satelitarnymi',
+      'Mini-lodówka, czajnik',
       'Zestaw plażowy: koc, parawan, leżak'
-    ],
-    englishFeatures: [
-      '3 people',
-      '29 m²',
-      'Double bed + single bed',
-      'Private bathroom (some with window)',
-      'Balcony',
-      'TV with satellite channels',
-      'Mini-fridge, kettle, coffee set',
-      'Beach set: blanket, windbreak, lounger'
     ],
     images: [
       '/img/3-osobowy/untitled-1.JPG',
@@ -169,50 +112,33 @@ const roomTypes = {
       '/img/3-osobowy/untitled-6.JPG',
       '/img/3-osobowy/untitled-7.JPG',
       '/img/3-osobowy/untitled-8.JPG'
-    ],
-    color: '#059669'
+    ]
   },
   'trzyosobowy-standard': {
     title: 'Pokój Trzyosobowy Standard',
-    englishTitle: 'Triple Room Standard',
     description: 'Wygodny pokój dla trzech osób z większą przestrzenią i lepszym standardem wyposażenia.',
-    englishDescription: 'Comfortable room for three people with more space and better standard equipment.',
-    price: '320-450',
     capacity: 3,
     size: '32-35 m²',
-    bedType: 'Łóżko podwójne + sofa rozkładana',
+    bedType: 'Łóżko podwójne + podwójne łóżko',
     features: [
       '3 osoby',
       'ok. 32-35 m²',
-      'Łóżko podwójne + sofa rozkładana',
+      'Łóżko podwójne + podwójne łóżko',
       'Prywatna łazienka z wanną',
       'Balkon z meblami wypoczynkowymi',
-      'Minibar, Smart TV',
-      'Sejf'
-    ],
-    englishFeatures: [
-      '3 people',
-      'approx. 32-35 m²',
-      'Double bed + sofa bed',
-      'Private bathroom with bathtub',
-      'Balcony with lounge furniture',
-      'Minibar, Smart TV',
-      'Safe'
+      'Minibar',
+      'Płaski telewizor'
     ],
     images: [
       '/img/3-osobowy-standard/untitled-1.JPG',
       '/img/3-osobowy-standard/untitled-2.JPG',
       '/img/3-osobowy-standard/untitled-3.JPG',
       '/img/3-osobowy-standard/untitled-4.JPG'
-    ],
-    color: '#7c3aed'
+    ]
   },
   'trzyosobowy-morze': {
     title: 'Pokój Trzyosobowy z Widokiem na Morze',
-    englishTitle: 'Triple Room with Sea View',
     description: 'Ekskluzywny pokój z balkonem i pięknym widokiem na Bałtyk.',
-    englishDescription: 'Exclusive room with balcony and beautiful view of the Baltic Sea.',
-    price: '400-580',
     capacity: 3,
     size: '35-40 m²',
     bedType: 'Łóżko podwójne + pojedyncze',
@@ -223,32 +149,17 @@ const roomTypes = {
       'Prywatna łazienka z wanną',
       'Duży balkon z widokiem na morze',
       'Minibar premium',
-      'Smart TV 55"',
-      'Ekspres do kawy, sejf'
-    ],
-    englishFeatures: [
-      '3 people',
-      '35-40 m²',
-      'Double bed + single bed',
-      'Private bathroom with bathtub',
-      'Large balcony with sea view',
-      'Premium minibar',
-      'Smart TV 55"',
-      'Coffee machine, safe'
+      'Płaski telewizor 55"'
     ],
     images: [
       'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop',
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop',
       'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800&h=600&fit=crop'
-    ],
-    color: '#0891b2'
+    ]
   },
   'czteroosobowy': {
     title: 'Pokój Czteroosobowy',
-    englishTitle: 'Quadruple Room',
     description: 'Idealny dla rodzin – przestronny pokój z balkonem i kompletnym wyposażeniem.',
-    englishDescription: 'Perfect for families – spacious room with balcony and complete equipment.',
-    price: '350-500',
     capacity: 4,
     size: '29-32 m²',
     bedType: 'Łóżko podwójne + dwa pojedyncze',
@@ -258,31 +169,17 @@ const roomTypes = {
       'Łóżko podwójne + dwa pojedyncze',
       'Prywatna łazienka (część z oknem)',
       '1 lub 2 balkony',
-      'TV, lodówka, czajnik, zestaw kawowy',
-      'Zestaw plażowy i kącik dziecięcy'
-    ],
-    englishFeatures: [
-      '4 people',
-      '29-32 m²',
-      'Double bed + two single beds',
-      'Private bathroom (some with window)',
-      '1 or 2 balconies',
-      'TV, fridge, kettle, coffee set',
-      'Beach set and children\'s corner'
+      'Płaski telewizor, lodówka, czajnik'
     ],
     images: [
       'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop',
       'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop',
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop'
-    ],
-    color: '#f97316'
+    ]
   },
   'apartament-dwupoziomowy': {
     title: 'Apartament Dwupoziomowy',
-    englishTitle: 'Two-Level Apartment',
     description: 'Luksusowy apartament z pięknym widokiem na morze – idealny na dłuższy pobyt lub rodzinne wakacje.',
-    englishDescription: 'Luxury apartment with beautiful sea view – perfect for longer stays or family holidays.',
-    price: '500-750',
     capacity: 6,
     size: '60-80 m²',
     bedType: 'Łóżko podwójne + 2 pojedyncze',
@@ -294,17 +191,7 @@ const roomTypes = {
       'Aneks kuchenny, jadalnia, balkon',
       '2 łazienki (w tym jedna z narożną wanną)',
       'Widok na morze z balkonu i okien dachowych',
-      'TV, lodówka, czajnik, pełne wyposażenie'
-    ],
-    englishFeatures: [
-      '4-6 people',
-      'approx. 60-80 m²',
-      '2 levels: bedroom + living room with kitchen',
-      'Double bed + 2 single beds',
-      'Kitchenette, dining room, balcony',
-      '2 bathrooms (one with corner bathtub)',
-      'Sea view from balcony and skylights',
-      'TV, fridge, kettle, full equipment'
+      'Płaski telewizor, lodówka, czajnik, pełne wyposażenie'
     ],
     images: [
       '/img/apartament/untitled-1.JPG',
@@ -315,10 +202,10 @@ const roomTypes = {
       '/img/apartament/untitled-6.JPG',
       '/img/apartament/untitled-7.JPG',
       '/img/apartament/untitled-8.JPG'
-    ],
-    color: '#dc2626'
+    ]
   }
 }
+
 
 // Get current room data
 const currentRoom = computed(() => {
