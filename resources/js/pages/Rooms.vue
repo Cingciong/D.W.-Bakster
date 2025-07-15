@@ -27,12 +27,12 @@ const scrollToPricing = () => {
     />
 
     <!-- Zobacz Cennik Button -->
-    <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 text-center mt-4 ">
+    <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 text-center mt-4 select-none">
       <button
         @click="scrollToPricing"
-        class="inline-flex items-center px-8 py-4 bg-teal-600 text-white cursor-pointer font-medium text-lg rounded-lg hover:bg-teal-700 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 animate-fade-up animate-delay-200"
+        class="inline-flex items-center px-4 py-3 bg-teal-600 text-white cursor-pointer font-medium text-lg rounded-lg hover:bg-teal-700 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 animate-fade-up animate-delay-200"
       >
-        <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-10 h-10 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
         </svg>
         Zobacz Cennik
@@ -70,7 +70,7 @@ const scrollToPricing = () => {
           class="animate-fade-up animate-delay-200"
           title="Pokój Dwuosobowy"
           description="Przytulny pokój dla dwóch osób z balkonem i podwójnym łóżkiem."
-          img-link="/img/2-osobowe/untitled.JPG"
+          img-link="/img/2-osobowe/untitled-7.JPG"
           color="#10b981"
           room-slug="dwuosobowy"
           @book-room="handleRoomBooking"
@@ -93,7 +93,7 @@ const scrollToPricing = () => {
           class="animate-fade-up animate-delay-300"
           title="Pokój Dwuosobowy Economy"
           description="Funkcjonalny pokój dla dwóch osób z podstawowym wyposażeniem i dostępem do wszystkich udogodnień."
-          img-link="/img/2-osobowy-economy/untitled-1.JPG"
+          img-link="/img/2-osobowy-economy/untitled-2.JPG"
           color="#6366f1"
           room-slug="dwuosobowy-economy"
           @book-room="handleRoomBooking"
@@ -115,7 +115,7 @@ const scrollToPricing = () => {
           class="animate-fade-up animate-delay-500"
           title="Pokój Trzyosobowy"
           description="Przestronny pokój dla trzech osób z balkonem i wygodnymi łóżkami."
-          img-link="/img/3-osobowy/untitled-1.JPG"
+          img-link="/img/3-osobowy/untitled-6.JPG"
           color="#059669"
           room-slug="trzyosobowy"
           @book-room="handleRoomBooking"
@@ -160,7 +160,7 @@ const scrollToPricing = () => {
           class="animate-fade-up animate-delay-[900ms]"
           title="Pokój Trzyosobowy z Widokiem na Morze"
           description="Ekskluzywny pokój z balkonem i pięknym widokiem na Bałtyk."
-          img-link="/img/3-osobowy/untitled-5.JPG"
+          img-link="/img/3-osobowe-widok/untitled-4.JPG"
           color="#0891b2"
           room-slug="trzyosobowy-morze"
           @book-room="handleRoomBooking"
@@ -182,7 +182,7 @@ const scrollToPricing = () => {
           class="animate-fade-up animate-delay-[1100ms]"
           title="Pokój Czteroosobowy"
           description="Idealny dla rodzin – przestronny pokój z balkonem i kompletnym wyposażeniem."
-          img-link="/img/3-osobowy/untitled-8.JPG"
+          img-link="/img/4-osobowe/untitled-1.JPG"
           color="#f97316"
           room-slug="czteroosobowy"
           @book-room="handleRoomBooking"
@@ -205,7 +205,7 @@ const scrollToPricing = () => {
           class="animate-fade-up animate-delay-[1300ms]"
           title="Apartament Dwupoziomowy"
           description="Luksusowy apartament z pięknym widokiem na morze – idealny na dłuższy pobyt lub rodzinne wakacje."
-          img-link="/img/apartament/untitled-1.JPG"
+          img-link="/img/apartament/untitled-7.JPG"
           color="#dc2626"
           room-slug="apartament-dwupoziomowy"
           @book-room="handleRoomBooking"

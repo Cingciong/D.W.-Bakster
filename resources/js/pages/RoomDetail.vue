@@ -56,13 +56,13 @@ const roomTypes = {
       'Śniadanie w cenie'
     ],
     images: [
-      '/img/2-osobowe/untitled.JPG',
+      '/img/2-osobowe/untitled-7.JPG',
       '/img/2-osobowe/untitled-2.JPG',
       '/img/2-osobowe/untitled-3.JPG',
       '/img/2-osobowe/untitled-4.JPG',
       '/img/2-osobowe/untitled-5.JPG',
       '/img/2-osobowe/untitled-6.JPG',
-      '/img/2-osobowe/untitled-7.JPG',
+      '/img/2-osobowe/untitled.JPG',
       '/img/2-osobowe/untitled-8.JPG'
     ]
   },
@@ -85,12 +85,12 @@ const roomTypes = {
       'Śniadanie w cenie'
     ],
     images: [
-      '/img/2-osobowy-economy/untitled-1.JPG',
       '/img/2-osobowy-economy/untitled-2.JPG',
+      '/img/2-osobowy-economy/untitled-6.JPG',
       '/img/2-osobowy-economy/untitled-3.JPG',
       '/img/2-osobowy-economy/untitled-4.JPG',
       '/img/2-osobowy-economy/untitled-5.JPG',
-      '/img/2-osobowy-economy/untitled-6.JPG',
+      '/img/2-osobowy-economy/untitled-1.JPG',
       '/img/2-osobowy-economy/untitled-7.JPG'
     ]
   },
@@ -114,12 +114,12 @@ const roomTypes = {
       'Śniadanie w cenie'
     ],
     images: [
-      '/img/3-osobowy/untitled-1.JPG',
+      '/img/3-osobowy/untitled-6.JPG',
       '/img/3-osobowy/untitled-2.JPG',
       '/img/3-osobowy/untitled-3.JPG',
       '/img/3-osobowy/untitled-4.JPG',
+      '/img/3-osobowy/untitled-1.JPG',
       '/img/3-osobowy/untitled-5.JPG',
-      '/img/3-osobowy/untitled-6.JPG',
       '/img/3-osobowy/untitled-7.JPG',
       '/img/3-osobowy/untitled-8.JPG'
     ]
@@ -168,7 +168,11 @@ const roomTypes = {
       'Śniadanie w cenie'
     ],
     images: [
-      '/img/3-osobowy/untitled-5.JPG' // możesz dodać więcej lokalnych, jeśli masz
+      '/img/3-osobowe-widok/untitled-1.JPG',
+      '/img/3-osobowe-widok/untitled-2.JPG',
+      '/img/3-osobowe-widok/untitled-3.JPG',
+      '/img/3-osobowe-widok/untitled-4.JPG',
+      '/img/3-osobowe-widok/untitled-5.JPG'
     ]
   },
   'czteroosobowy': {
@@ -191,7 +195,14 @@ const roomTypes = {
       'Śniadanie w cenie'
     ],
     images: [
-      '/img/3-osobowy/untitled-8.JPG' // zmień na właściwe jeśli masz czteroosobowy folder
+      '/img/4-osobowe/untitled-1.JPG',
+      '/img/4-osobowe/untitled-2.JPG',
+      '/img/4-osobowe/untitled-3.JPG',
+      '/img/4-osobowe/untitled-4.JPG',
+      '/img/4-osobowe/untitled-5.JPG',
+      '/img/4-osobowe/untitled-6.JPG',
+      '/img/4-osobowe/untitled-7.JPG',
+      '/img/4-osobowe/untitled-8.JPG'
     ]
   },
   'apartament-dwupoziomowy': {
@@ -215,7 +226,16 @@ const roomTypes = {
       'Śniadanie w cenie'
     ],
     images: [
-      '/img/apartament/untitled-1.JPG'
+      '/img/apartament/untitled-7.JPG',
+      '/img/apartament/untitled-2.JPG',
+      '/img/apartament/untitled-3.JPG',
+      '/img/apartament/untitled-4.JPG',
+      '/img/apartament/untitled-5.JPG',
+      '/img/apartament/untitled-6.JPG',
+      '/img/apartament/untitled-1.JPG',
+      '/img/apartament/untitled-8.JPG',
+      '/img/apartament/untitled-9.JPG',
+      '/img/apartament/untitled-10.JPG'
     ]
   }
 };
