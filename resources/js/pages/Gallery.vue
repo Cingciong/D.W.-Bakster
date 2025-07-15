@@ -9,7 +9,7 @@ const galleryItems = ref([
   {
     imageSrc: '/img/jadalnia/untitled-1.JPG',
     title: 'Jadalnia',
-    description: 'Przestronna jadalnia z widokiem na ogród',
+    description: 'Przestronna jadalnia',
     category: 'jadalnia'
   },
   {
@@ -47,7 +47,7 @@ const galleryItems = ref([
   {
     imageSrc: '/img/bawialnia/untitled-1.JPG',
     title: 'Bawialnia',
-    description: 'Miejsce relaksu i rozrywki dla gości',
+    description: 'Miejsce relaksu i rozrywki dla dzieci',
     category: 'bawialnia'
   }
 ])
@@ -69,15 +69,14 @@ const handleImageClick = (imageSrc) => {
     <!-- Gallery Content -->
     <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 animate-fade-up animate-delay-300">
       <!-- Gallery Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         <!-- Dynamic Gallery Items -->
         <GalleryCard
-          v-for="(item, index) in galleryItems"
+          v-for="item in galleryItems"
           :key="item.imageSrc"
           :image-src="item.imageSrc"
           :title="item.title"
           :description="item.description"
-          :class="`animate-fade-up animate-delay-${(index + 1) * 100}`"
           @image-click="handleImageClick"
         />
 

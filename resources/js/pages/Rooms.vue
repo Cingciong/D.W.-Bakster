@@ -8,15 +8,36 @@ const handleRoomBooking = (roomData) => {
   console.log('Rezerwacja pokoju:', roomData)
   // Tutaj można dodać logikę nawigacji lub rezerwacji
 }
+
+// Function to scroll to pricing section
+const scrollToPricing = () => {
+  const element = document.getElementById('cennik-section')
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-50">
+  <div class="min-h-screen bg-gray-50 mb-10">
     <!-- Nagłówek -->
     <PageHeader
       title="Nasze <span class='text-teal'>Pokoje</span>"
       description="Wybierz idealny pokój dla swojego pobytu"
     />
+
+    <!-- Zobacz Cennik Button -->
+    <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 text-center mt-4 ">
+      <button
+        @click="scrollToPricing"
+        class="inline-flex items-center px-8 py-4 bg-teal-600 text-white cursor-pointer font-medium text-lg rounded-lg hover:bg-teal-700 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 animate-fade-up animate-delay-200"
+      >
+        <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+        </svg>
+        Zobacz Cennik
+      </button>
+    </div>
 
     <!-- Siatka pokoi -->
     <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
@@ -205,6 +226,65 @@ const handleRoomBooking = (roomData) => {
 
       </div>
     </div>
+    <!-- Cennik -->
+      <div id="cennik-section" class="mt-16 max-w-4xl mx-auto">
+        <div class="bg-white rounded-lg shadow-lg p-8 animate-fade-up animate-delay-[1500ms]">
+          <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+            <span class="text-teal-600">Cennik</span> Noclegu
+          </h2>
+
+          <!-- Ceny sezonowe -->
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <!-- Sezon niski -->
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+              <h3 class="text-xl font-semibold text-blue-700 mb-3">Sezon Niski</h3>
+              <p class="text-gray-600 mb-2">maj, czerwiec, wrzesień</p>
+              <div class="text-2xl font-bold text-blue-600">
+                od 100,00 zł
+                <span class="text-sm font-normal text-gray-600">za dobę/osobę</span>
+              </div>
+            </div>
+
+            <!-- Sezon wysoki -->
+            <div class="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-r-lg">
+              <h3 class="text-xl font-semibold text-orange-700 mb-3">Sezon Wysoki</h3>
+              <p class="text-gray-600 mb-2">lipiec, sierpień</p>
+              <div class="text-2xl font-bold text-orange-600">
+                od 120,00 zł
+                <span class="text-sm font-normal text-gray-600">za dobę/osobę</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Informacje dodatkowe -->
+          <div class="space-y-4 text-gray-700">
+            <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+              <div class="flex items-center mb-2">
+                <span class="text-green-600 text-xl mr-2">🍽️</span>
+                <span class="font-semibold text-green-700">Śniadanie w cenie</span>
+              </div>
+              <p class="text-sm">Śniadanie serwowane jest w formie szwedzkiego stołu.</p>
+            </div>
+
+            <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 space-y-2 text-sm">
+              <p><strong>Uwagi:</strong></p>
+              <ul class="space-y-1 ml-4">
+                <li>• Podane ceny są orientacyjne i mogą podlegać negocjacjom w zależności od ilości osób i długości pobytu</li>
+                <li>• W cenie nie ujęto obowiązującej opłaty miejscowej, której wysokość ogłasza Uchwała Rady Miejskiej Władysławowa (dostępna w Recepcji D.W. Bakster)</li>
+                <li>• Jesteśmy płatnikiem VAT i wystawiamy faktury za pobyt w naszym obiekcie</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Call to action -->
+          <div class="mt-8 text-center">
+            <div class="bg-teal-50 border border-teal-200 rounded-lg p-4">
+              <p class="text-teal-700 font-medium mb-2">Masz pytania dotyczące cen?</p>
+              <p class="text-sm text-gray-600">Skontaktuj się z nami, aby uzyskać indywidualną wycenę dla Twojego pobytu.</p>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
 </template>
 
