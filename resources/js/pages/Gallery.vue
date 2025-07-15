@@ -21,25 +21,25 @@ const galleryItems = ref([
   // Śniadania images
   {
     imageSrc: '/img/śnidadania/untitled-1.JPG',
-    title: 'Sala śniadaniowa',
+    title: 'Śniadania',
     description: 'Urokliwe miejsce na poranny posiłek',
     category: 'śniadania'
   },
   {
     imageSrc: '/img/śnidadania/untitled-2.JPG',
-    title: 'Sala śniadaniowa - widok 2',
+    title: 'Śniadania - widok 2',
     description: 'Przytulna atmosfera śniadań',
     category: 'śniadania'
   },
   {
     imageSrc: '/img/śnidadania/untitled-3.JPG',
-    title: 'Sala śniadaniowa - widok 3',
+    title: 'Śniadania - widok 3',
     description: 'Komfortowe miejsce do spożywania posiłków',
     category: 'śniadania'
   },
   {
     imageSrc: '/img/śnidadania/untitled-4.JPG',
-    title: 'Sala śniadaniowa - widok 4',
+    title: 'Śniadania - widok 4',
     description: 'Stylowe wnętrze sali śniadaniowej',
     category: 'śniadania'
   },
@@ -49,6 +49,56 @@ const galleryItems = ref([
     title: 'Bawialnia',
     description: 'Miejsce relaksu i rozrywki dla dzieci',
     category: 'bawialnia'
+  },
+
+  // Room images from Rooms.vue
+  {
+    imageSrc: '/img/1-osobowe/untitled-1.JPG',
+    title: 'Pokój Jednosobowy',
+    description: 'Komfortowy pokój dla jednej osoby z widokiem na ogród',
+    category: 'pokoje'
+  },
+  {
+    imageSrc: '/img/2-osobowe/untitled-7.JPG',
+    title: 'Pokój Dwuosobowy',
+    description: 'Przytulny pokój dla dwóch osób z balkonem i podwójnym łóżkiem',
+    category: 'pokoje'
+  },
+  {
+    imageSrc: '/img/2-osobowy-economy/untitled-2.JPG',
+    title: 'Pokój Dwuosobowy Economy',
+    description: 'Funkcjonalny pokój z podstawowym wyposażeniem',
+    category: 'pokoje'
+  },
+  {
+    imageSrc: '/img/3-osobowy/untitled-6.JPG',
+    title: 'Pokój Trzyosobowy',
+    description: 'Przestronny pokój dla trzech osób z balkonem',
+    category: 'pokoje'
+  },
+  {
+    imageSrc: '/img/3-osobowy-standard/untitled-1.JPG',
+    title: 'Pokój Trzyosobowy Standard',
+    description: 'Wygodny pokój z większą przestrzenią i lepszym standardem',
+    category: 'pokoje'
+  },
+  {
+    imageSrc: '/img/3-osobowe-widok/untitled-4.JPG',
+    title: 'Pokój Trzyosobowy z Widokiem na Morze',
+    description: 'Ekskluzywny pokój z balkonem i pięknym widokiem na Bałtyk',
+    category: 'pokoje'
+  },
+  {
+    imageSrc: '/img/4-osobowe/untitled-1.JPG',
+    title: 'Pokój Czteroosobowy',
+    description: 'Idealny dla rodzin – przestronny pokój z balkonem',
+    category: 'pokoje'
+  },
+  {
+    imageSrc: '/img/apartament/untitled-7.JPG',
+    title: 'Apartament Dwupoziomowy',
+    description: 'Luksusowy apartament z pięknym widokiem na morze',
+    category: 'pokoje'
   }
 ])
 

@@ -270,7 +270,7 @@ const scrollToPricing = () => {
               <p><strong>Uwagi:</strong></p>
               <ul class="space-y-1 ml-4">
                 <li>• Podane ceny są orientacyjne i mogą podlegać negocjacjom w zależności od ilości osób i długości pobytu</li>
-                <li>• W cenie nie ujęto obowiązującej opłaty miejscowej, której wysokość ogłasza Uchwała Rady Miejskiej Władysławowa (dostępna w Recepcji D.W. Bakster)</li>
+                <li>• W cenie nie ujęto obowiązującej opłaty miejscowej, której wysokość ogłasza Uchwała Rady Miejskiej Władysławowa (dostępna w Recepcji Pensjonat Bakster)</li>
                 <li>• Jesteśmy płatnikiem VAT i wystawiamy faktury za pobyt w naszym obiekcie</li>
               </ul>
             </div>
