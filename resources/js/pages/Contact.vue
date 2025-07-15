@@ -104,6 +104,7 @@
           </div>
 
           <form @submit="submitForm" class="space-y-6">
+ 
             <div>
               <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Imię i Nazwisko</label>
               <input
@@ -200,7 +201,7 @@ const submitForm = async (event) => {
   showAlert.value = false
 
   try {
-    const response = await window.axios.post('/contact', form.value)
+    const response = await window.axios.post('/api/contact', form.value)
 
     if (response.data.success) {
       alertType.value = 'success'
