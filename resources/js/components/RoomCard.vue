@@ -54,7 +54,8 @@ const handleBooking = () => {
       <img
         :src="imgLink"
         :alt="title"
-        class=" w-full object-cover roomimg cursor-pointer h-full transition-transform duration-300 transform hover:scale-105"
+        @click="handleBooking"
+        class="w-full object-cover roomimg cursor-pointer h-full transition-transform duration-300 transform hover:scale-105"
       />
     </div>
 
