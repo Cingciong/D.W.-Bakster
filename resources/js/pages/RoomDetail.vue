@@ -21,10 +21,12 @@ const roomTypes = {
       '14 m²',
       'Łóżko pojedyncze',
       'Prywatna łazienka z prysznicem',
-      'Bezpłatne Wi-Fi',
-      'Płaski telewizor z kanałami naziemnymi i satelitarnymi',
+      'Płaski Telewizor',
       'Mini-lodówka, czajnik',
-      'Zestaw plażowy: koc, parawan, leżak'
+      'Mały zestaw kosmetyków, suszarka',
+      'Zestaw plażowy: koc, parawan, leżak',
+      'Bezpłatne miejsce parkingowe',
+      'Śniadanie w cenie'
     ],
     images: [
       '/img/1-osobowe/untitled-1.JPG',
@@ -38,18 +40,20 @@ const roomTypes = {
     title: 'Pokój Dwuosobowy',
     description: 'Przytulny pokój dla dwóch osób z balkonem i podwójnym łóżkiem.',
     capacity: 2,
-    size: '16-23 m²',
+    size: '16–23 m²',
     bedType: 'Łóżko podwójne',
     features: [
       '2 osoby',
-      '16-23 m²',
+      '16–23 m²',
       'Łóżko podwójne',
-      'Prywatna łazienka (część z oknem)',
-      'Balkon lub okno balkonowe',
-      'Bezpłatne Wi-Fi',
-      'Płaski telewizor',
+      'Prywatna łazienka z prysznicem',
+      'Płaski Telewizor',
       'Mini-lodówka, czajnik',
-      'Zestaw plażowy: koc, parawan, leżak'
+      'Mały zestaw kosmetyków, suszarka',
+      'Balkon ze stoliczkiem i krzesłami',
+      'Zestaw plażowy: koc, parawan, leżak',
+      'Bezpłatne miejsce parkingowe',
+      'Śniadanie w cenie'
     ],
     images: [
       '/img/2-osobowe/untitled.JPG',
@@ -73,9 +77,12 @@ const roomTypes = {
       '16 m²',
       'Łóżko podwójne',
       'Prywatna łazienka z prysznicem',
-      'Bezpłatne Wi-Fi',
-      'Płaski telewizor',
-      'Mini-lodówka, czajnik'
+      'Płaski Telewizor',
+      'Mini-lodówka, czajnik',
+      'Mały zestaw kosmetyków, suszarka',
+      'Zestaw plażowy: koc, parawan, leżak',
+      'Bezpłatne miejsce parkingowe',
+      'Śniadanie w cenie'
     ],
     images: [
       '/img/2-osobowy-economy/untitled-1.JPG',
@@ -97,11 +104,14 @@ const roomTypes = {
       '3 osoby',
       '29 m²',
       'Łóżko podwójne + łóżko pojedyncze',
-      'Prywatna łazienka (część z oknem)',
-      'Balkon',
-      'Płaski telewizor z kanałami satelitarnymi',
+      'Prywatna łazienka z prysznicem',
+      'Płaski Telewizor',
       'Mini-lodówka, czajnik',
-      'Zestaw plażowy: koc, parawan, leżak'
+      'Mały zestaw kosmetyków, suszarka',
+      'Balkon ze stoliczkiem i krzesłami',
+      'Zestaw plażowy: koc, parawan, leżak',
+      'Bezpłatne miejsce parkingowe',
+      'Śniadanie w cenie'
     ],
     images: [
       '/img/3-osobowy/untitled-1.JPG',
@@ -118,16 +128,19 @@ const roomTypes = {
     title: 'Pokój Trzyosobowy Standard',
     description: 'Wygodny pokój dla trzech osób z większą przestrzenią i lepszym standardem wyposażenia.',
     capacity: 3,
-    size: '32-35 m²',
-    bedType: 'Łóżko podwójne + podwójne łóżko',
+    size: 'ok. 32–35 m²',
+    bedType: 'Łóżko podwójne + łóżko pojedyncze',
     features: [
       '3 osoby',
-      'ok. 32-35 m²',
-      'Łóżko podwójne + podwójne łóżko',
-      'Prywatna łazienka z wanną',
-      'Balkon z meblami wypoczynkowymi',
-      'Minibar',
-      'Płaski telewizor'
+      'ok. 32–35 m²',
+      'Łóżko podwójne + łóżko pojedyncze',
+      'Prywatna łazienka z prysznicem',
+      'Płaski Telewizor',
+      'Mały zestaw kosmetyków, suszarka',
+      'Balkon ze stoliczkiem i krzesłami',
+      'Zestaw plażowy: koc, parawan, leżak',
+      'Bezpłatne miejsce parkingowe',
+      'Śniadanie w cenie'
     ],
     images: [
       '/img/3-osobowy-standard/untitled-1.JPG',
@@ -140,71 +153,73 @@ const roomTypes = {
     title: 'Pokój Trzyosobowy z Widokiem na Morze',
     description: 'Ekskluzywny pokój z balkonem i pięknym widokiem na Bałtyk.',
     capacity: 3,
-    size: '35-40 m²',
+    size: '35–40 m²',
     bedType: 'Łóżko podwójne + pojedyncze',
     features: [
       '3 osoby',
-      '35-40 m²',
+      '35–40 m²',
       'Łóżko podwójne + pojedyncze',
-      'Prywatna łazienka z wanną',
-      'Duży balkon z widokiem na morze',
-      'Minibar premium',
-      'Płaski telewizor 55"'
+      'Prywatna łazienka z przysznicem',
+      'Płaski Telewizor',
+      'Mały zestaw kosmetyków, suszarka',
+      'Balkon ze stoliczkiem i krzesłami',
+      'Zestaw plażowy: koc, parawan, leżak',
+      'Bezpłatne miejsce parkingowe',
+      'Śniadanie w cenie'
     ],
     images: [
-      'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800&h=600&fit=crop'
+      '/img/3-osobowy/untitled-5.JPG' // możesz dodać więcej lokalnych, jeśli masz
     ]
   },
   'czteroosobowy': {
     title: 'Pokój Czteroosobowy',
     description: 'Idealny dla rodzin – przestronny pokój z balkonem i kompletnym wyposażeniem.',
     capacity: 4,
-    size: '29-32 m²',
+    size: '29–32 m²',
     bedType: 'Łóżko podwójne + dwa pojedyncze',
     features: [
       '4 osoby',
-      '29-32 m²',
+      '29–32 m²',
       'Łóżko podwójne + dwa pojedyncze',
-      'Prywatna łazienka (część z oknem)',
-      '1 lub 2 balkony',
-      'Płaski telewizor, lodówka, czajnik'
+      'Prywatna łazienka z prysznicem',
+      'Płaski Telewizor',
+      'Lodówka, czajnik',
+      'Mały zestaw kosmetyków',
+      'Balkon ze stoliczkiem i krzesłami',
+      'Zestaw plażowy: koc, parawan, leżak',
+      'Bezpłatne miejsce parkingowe',
+      'Śniadanie w cenie'
     ],
     images: [
-      'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop'
+      '/img/3-osobowy/untitled-8.JPG' // zmień na właściwe jeśli masz czteroosobowy folder
     ]
   },
   'apartament-dwupoziomowy': {
     title: 'Apartament Dwupoziomowy',
     description: 'Luksusowy apartament z pięknym widokiem na morze – idealny na dłuższy pobyt lub rodzinne wakacje.',
     capacity: 6,
-    size: '60-80 m²',
+    size: 'ok. 60–80 m²',
     bedType: 'Łóżko podwójne + 2 pojedyncze',
     features: [
-      '4-6 osób',
-      'ok. 60-80 m²',
+      '4–6 osób',
+      'ok. 60–80 m²',
       '2 poziomy: sypialnia + salon z kuchnią',
       'Łóżko podwójne + 2 pojedyncze',
       'Aneks kuchenny, jadalnia, balkon',
       '2 łazienki (w tym jedna z narożną wanną)',
+      'Płaski telewizor',
+      'Lodówka, czajnik, pełne wyposażenie',
+      'Mały zestaw kosmetyków',
       'Widok na morze z balkonu i okien dachowych',
-      'Płaski telewizor, lodówka, czajnik, pełne wyposażenie'
+      'Bezpłatne miejsce parkingowe',
+      'Śniadanie w cenie'
     ],
     images: [
-      '/img/apartament/untitled-1.JPG',
-      '/img/apartament/untitled-2.JPG',
-      '/img/apartament/untitled-3.JPG',
-      '/img/apartament/untitled-4.JPG',
-      '/img/apartament/untitled-5.JPG',
-      '/img/apartament/untitled-6.JPG',
-      '/img/apartament/untitled-7.JPG',
-      '/img/apartament/untitled-8.JPG'
+      '/img/apartament/untitled-1.JPG'
     ]
   }
-}
+};
+
 
 
 // Get current room data
@@ -275,6 +290,7 @@ const bookRoom = () => {
                   :src="currentRoom.images[currentImageIndex]"
                   :alt="currentRoom.title"
                   class="w-auto h-full mx-auto bg-gray-300 object-cover transition-transform duration-300"
+
                 />
 
                 <!-- Navigation Arrows -->
@@ -313,7 +329,7 @@ const bookRoom = () => {
                   <img
                     :src="image"
                     :alt="`${currentRoom.title} - zdjęcie ${index + 1}`"
-                    class="w-full h-full object-cover"
+                    class="w-full h-full object-cover img"
                   />
                 </button>
               </div>
@@ -383,8 +399,9 @@ const bookRoom = () => {
             <div class="mt-6 pt-6 border-t border-gray-200 text-center">
               <p class="text-sm text-gray-600 mb-2">Potrzebujesz pomocy?</p>
               <div class="text-sm">
-                <a href="tel:+48123456789" class="text-blue-600 hover:text-blue-800 block">+48 123 456 789</a>
-                <a href="mailto:info@bakster.pl" class="text-blue-600 hover:text-blue-800 block">info@bakster.pl</a>
+                <a href="tel:+48586752404" class="text-blue-600 hover:text-blue-800 block">tel./fax: 058 675 24 04</a>
+                <a href="tel:+48733915030" class="text-blue-600 hover:text-blue-800 block">tel. kom: +48 733 915 030</a>
+                <a href="mailto:bakster@bakster.pl" class="text-blue-600 hover:text-blue-800 block">bakster@bakster.pl</a>
               </div>
             </div>
           </div>
@@ -419,5 +436,9 @@ const bookRoom = () => {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.img{
+    overflow-clip-margin: unset;
 }
 </style>

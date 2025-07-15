@@ -15,8 +15,8 @@ const toggleMenu = () => {
       <div class="flex justify-between h-16">
 
         <div class="flex items-center">
-            <a href="/" class="text-2xl font-bold flex flex-row gap-3 py-auto  text-teal">
-                <img :src="'/img/logo.svg'" alt="D.W. Bakster Logo" class="h-8 w-8  hover:opacity-55 duration-300">
+            <a href="/" class="text-2xl font-bold flex flex-row gap-5 py-auto  text-teal">
+                <img :src="'/img/logo.svg'" alt="D.W. Bakster Logo" class="h-10 w-10 rounded-md opacity-90 hover:opacity-45 duration-300">
                 <span class="text-2xl font-bold hover:text-teal/55 duration-300 text-teal my-auto ">Pensjonat Bakster</span>
             </a>
         </div>

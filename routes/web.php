@@ -1,12 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ContactController;
+use App\Http\Controllers\MailController;
 
 // Contact form route
-Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
+Route::get('/mail', [MailController::class, 'sendMail']);
 
-// Vue Router handles all routes on frontend
+// Test email route (works in both dev and production)
+Route::get('/test-email', [MailController::class, 'testEmail']);
+
+// Check mail configuration
+Route::get('/mail-config', [MailController::class, 'checkMailConfig']);
+
 Route::get('/{any}', function () {
     return view('welcome');
 })->where('any', '.*');
+
+
