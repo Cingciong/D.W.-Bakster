@@ -289,8 +289,8 @@ const scrollToPricing = () => {
 </template>
 
 <style scoped>
-.hero-bg {
-  background-image: url('https://picsum.photos/id/16/2500/1667');
+:deep(.hero-bg) {
+  background-image: url('/img/main.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

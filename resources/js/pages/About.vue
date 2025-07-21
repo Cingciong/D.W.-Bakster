@@ -10,7 +10,7 @@
     <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
       <!-- Main Story -->
       <div class="bg-white rounded-lg shadow-md p-8 mb-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           <div>
             <h2 class="text-2xl font-bold text-gray-900 mb-4">O Pensjonacie</h2>
             <p class="text-gray-600 mb-4">
@@ -28,8 +28,7 @@
               przestronny, dwupoziomowy apartament.
             </p>
           </div>
-          <div class="bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg h-64 flex items-center justify-center">
-            <span class="text-white text-8xl">🏨</span>
+          <div class="rounded-lg h-64 md:h-80 lg:h-96 w-full overflow-hidden shadow-lg pensjonat-bg hover:scale-105 transition-transform duration-300">
           </div>
         </div>
       </div>
@@ -123,9 +122,17 @@ import PageHeader from '../components/PageHeader.vue'
 
 <style scoped>
 .hero-bg {
-  background-image: url('https://picsum.photos/id/16/2500/1667');
+  background-image: url('/img/main.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.pensjonat-bg {
+  background-image: url('/img/pensjonat.jpg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f8fafc;
 }
 </style>
