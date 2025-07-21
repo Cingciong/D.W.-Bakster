@@ -2,7 +2,7 @@
   <div class="min-h-screen bg-gray-50">
     <!-- Header -->
     <PageHeader
-      title="O Nas"
+      title='O <span class="text-teal">Nas</span>'
       description="Poznaj nasz Pensjonat"
     />
 
@@ -28,24 +28,52 @@
               przestronny, dwupoziomowy apartament.
             </p>
           </div>
-          <div class="rounded-lg h-64 md:h-80 lg:h-96 w-full overflow-hidden shadow-lg pensjonat-bg hover:scale-105 transition-transform duration-300">
+          <div class="rounded-lg h-64 md:h-80 lg:h-96 w-full overflow-hidden shadow-lg pensjonat-bg ">
           </div>
         </div>
       </div>
 
       <!-- Values -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-        <div class="bg-white rounded-lg shadow-md p-6 text-center">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span class="text-2xl">🛌</span>
+
+
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+          <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🍳</span>
           </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Przyjazny rodzinom</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Darmowe śniadania</h3>
           <ul class="text-gray-600 list-disc list-inside mb-3">
-            <li>Kącik zabaw dla dzieci wewnątrz budynku</li>
-            <li>Mini plac zabaw na świeżym powietrzu</li>
-            <li>Miejsce do grillowania z dużym kamiennym grillem – idealne na rodzinne wieczory</li>
+            <li>Pyszne śniadanie serwowane codziennie</li>
+            <li>Świeże produkty lokalne</li>
+            <li>Różnorodne opcje dla każdego</li>
           </ul>
         </div>
+
+         <div class="bg-white rounded-lg shadow-md p-6 text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">📍</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Doskonała lokalizacja</h3>
+          <ul class="text-gray-600 list-disc list-inside mb-3">
+            <li>8 minut spacerem do centrum miasta</li>
+            <li>2 minuty do najbliższego sklepu otwartego do późna</li>
+            <li>Restauracje z domowymi obiadami w promieniu 2–3 minut</li>
+          </ul>
+        </div>
+
+
+        <div class="bg-white rounded-lg shadow-md p-6 text-center">
+  <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+    <span class="text-2xl">🅿️</span>
+  </div>
+  <h3 class="text-xl font-semibold text-gray-900 mb-2">Darmowy parking</h3>
+  <ul class="text-gray-600 list-disc list-inside mb-3">
+    <li>Monitorowany parking na około 18 samochodów</li>
+    <li>Bezpieczne, zamykane miejsce na rowery</li>
+    <li>Parking dostępny dla wszystkich gości bez dodatkowych opłat</li>
+  </ul>
+</div>
+
 
          <div class="bg-white rounded-lg shadow-md p-6 text-center">
           <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -59,6 +87,7 @@
           </ul>
         </div>
 
+
         <div class="bg-white rounded-lg shadow-md p-6 text-center">
           <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <span class="text-2xl">🤝</span>
@@ -71,42 +100,23 @@
           </ul>
         </div>
 
-        <div class="bg-white rounded-lg shadow-md p-6 text-center">
-          <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span class="text-2xl">🍳</span>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🛌</span>
           </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Darmowe śniadania</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Przyjazny rodzinom</h3>
           <ul class="text-gray-600 list-disc list-inside mb-3">
-            <li>Pyszne śniadanie serwowane codziennie</li>
-            <li>Świeże produkty lokalne</li>
-            <li>Różnorodne opcje dla każdego</li>
+            <li>Kącik zabaw dla dzieci wewnątrz budynku</li>
+            <li>Mini plac zabaw na świeżym powietrzu</li>
+            <li>Miejsce do grillowania z dużym kamiennym grillem – idealne na rodzinne wieczory</li>
           </ul>
         </div>
 
-        <div class="bg-white rounded-lg shadow-md p-6 text-center">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span class="text-2xl">🛍</span>
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Doskonała lokalizacja</h3>
-          <ul class="text-gray-600 list-disc list-inside mb-3">
-            <li>8 minut spacerem do centrum miasta</li>
-            <li>2 minuty do najbliższego sklepu otwartego do późna</li>
-            <li>Restauracje z domowymi obiadami w promieniu 2–3 minut</li>
-          </ul>
-        </div>
 
-        <div class="bg-white rounded-lg shadow-md p-6 text-center">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span class="text-2xl">🏖</span>
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Blisko plaży</h3>
-          <ul class="text-gray-600 list-disc list-inside mb-3">
-            <li>W każdym pokoju: parawan, koc plażowy i leżak</li>
-            <li>Zaledwie 12 minut spacerem do szerokiej, pięknej plaży</li>
-            <li>Urokliwa trasa na plażę przez alejki Centralnego Ośrodka Sportu</li>
-          </ul>
-        </div>
-      </div>
+
+ </div>
+
+
 
       <!-- Team -->
 

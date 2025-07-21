@@ -17,7 +17,7 @@ const goBack = () => {
   <div class="min-h-screen bg-gray-50">
     <!-- Header -->
     <PageHeader
-      title="Strona nie znaleziona"
+      title='Strona <span class="text-teal">nie znaleziona</span> '
       description="404 - Nie mogliśmy znaleźć tej strony"
     />
 

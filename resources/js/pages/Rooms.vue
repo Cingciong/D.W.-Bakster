@@ -258,12 +258,23 @@ const scrollToPricing = () => {
 
           <!-- Informacje dodatkowe -->
           <div class="space-y-4 text-gray-700">
-            <div class="bg-green-50 border border-green-200 rounded-lg p-4">
-              <div class="flex items-center mb-2">
-                <span class="text-green-600 text-xl mr-2">🍽️</span>
-                <span class="font-semibold text-green-700">Śniadanie w cenie</span>
+            <!-- Śniadanie i Parking obok siebie -->
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                <div class="flex items-center mb-2">
+                  <span class="text-green-600 text-xl mr-2">🍽️</span>
+                  <span class="font-semibold text-green-700">Śniadanie w cenie</span>
+                </div>
+                <p class="text-sm">Śniadanie serwowane jest w formie szwedzkiego stołu.</p>
               </div>
-              <p class="text-sm">Śniadanie serwowane jest w formie szwedzkiego stołu.</p>
+
+              <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <div class="flex items-center mb-2">
+                  <span class="text-blue-600 text-xl mr-2">🚗</span>
+                  <span class="font-semibold text-blue-700">Bezpłatny parking</span>
+                </div>
+                <p class="text-sm">Parking niestrzeżony dla wszystkich gości pensjonatu.</p>
+              </div>
             </div>
 
             <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 space-y-2 text-sm">

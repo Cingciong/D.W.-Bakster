@@ -11,7 +11,7 @@ const { t } = useI18n()
 
 const roomTypes = {
   'jednosobowy': {
-    title: 'Pokój Jednosobowy',
+    title: 'Pokój <span class="text-teal">Jednosobowy</span>',
     description: 'Komfortowy pokój dla jednej osoby z widokiem na ogród. Idealny na spokojny wypoczynek nad morzem.',
     capacity: 1,
     size: '14 m²',
@@ -37,7 +37,7 @@ const roomTypes = {
     ]
   },
   'dwuosobowy': {
-    title: 'Pokój Dwuosobowy',
+    title: 'Pokój <span class="text-teal">Dwuosobowy</span>',
     description: 'Przytulny pokój dla dwóch osób z balkonem i podwójnym łóżkiem.',
     capacity: 2,
     size: '16–23 m²',
@@ -67,7 +67,7 @@ const roomTypes = {
     ]
   },
   'dwuosobowy-economy': {
-    title: 'Pokój Dwuosobowy Economy',
+    title: 'Pokój <span class="text-teal">Dwuosobowy Economy</span>',
     description: 'Funkcjonalny pokój dla dwóch osób z podstawowym wyposażeniem i dostępem do wszystkich udogodnień.',
     capacity: 2,
     size: '16 m²',
@@ -95,7 +95,7 @@ const roomTypes = {
     ]
   },
   'trzyosobowy': {
-    title: 'Pokój Trzyosobowy',
+    title: 'Pokój <span class="text-teal">Trzyosobowy</span>',
     description: 'Przestronny pokój dla trzech osób z balkonem i wygodnymi łóżkami.',
     capacity: 3,
     size: '29 m²',
@@ -125,7 +125,7 @@ const roomTypes = {
     ]
   },
   'trzyosobowy-standard': {
-    title: 'Pokój Trzyosobowy Standard',
+    title: 'Pokój <span class="text-teal">Trzyosobowy Standard</span>',
     description: 'Wygodny pokój dla trzech osób z większą przestrzenią i lepszym standardem wyposażenia.',
     capacity: 3,
     size: 'ok. 32–35 m²',
@@ -150,7 +150,7 @@ const roomTypes = {
     ]
   },
   'trzyosobowy-morze': {
-    title: 'Pokój Trzyosobowy z Widokiem na Morze',
+    title: 'Pokój <span class="text-teal">Trzyosobowy z Widokiem na Morze</span>',
     description: 'Ekskluzywny pokój z balkonem i pięknym widokiem na Bałtyk.',
     capacity: 3,
     size: '35–40 m²',
@@ -176,7 +176,7 @@ const roomTypes = {
     ]
   },
   'czteroosobowy': {
-    title: 'Pokój Czteroosobowy',
+    title: 'Pokój <span class="text-teal">Czteroosobowy</span>',
     description: 'Idealny dla rodzin – przestronny pokój z balkonem i kompletnym wyposażeniem.',
     capacity: 4,
     size: '29–32 m²',
@@ -206,7 +206,7 @@ const roomTypes = {
     ]
   },
   'apartament-dwupoziomowy': {
-    title: 'Apartament Dwupoziomowy',
+    title: 'Apartament <span class="text-teal">Dwupoziomowy</span>',
     description: 'Luksusowy apartament z pięknym widokiem na morze – idealny na dłuższy pobyt lub rodzinne wakacje.',
     capacity: 6,
     size: 'ok. 60–80 m²',
@@ -451,8 +451,8 @@ const bookRoom = () => {
   line-height: 1.6;
 }
 
-.hero-bg {
-  background-image: url('https://picsum.photos/id/16/2500/1667');
+:deep(.hero-bg) {
+  background-image: url('/img/main.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
