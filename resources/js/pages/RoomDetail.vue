@@ -1,12 +1,10 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { useI18n } from 'vue-i18n'
 import PageHeader from '../components/PageHeader.vue'
 
 const route = useRoute()
 const router = useRouter()
-const { t } = useI18n()
 
 
 const roomTypes = {

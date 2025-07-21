@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-import LanguageSwitcher from './LanguageSwitcher.vue'
 
 const isMenuOpen = ref(false)
 
@@ -28,7 +27,7 @@ const toggleMenu = () => {
             class="text-gray-700 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
             :class="{ 'text-primary-500 bg-primary-50': $route.name === 'Home' }"
           >
-            {{ $t('nav.home') }}
+            Główna
           </router-link>
 
           <router-link
@@ -36,7 +35,7 @@ const toggleMenu = () => {
             class="text-gray-700 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
             :class="{ 'text-primary-500 bg-primary-50': $route.name === 'Rooms' }"
           >
-            {{ $t('nav.rooms') }}
+            Pokoje
           </router-link>
 
           <router-link
@@ -44,7 +43,7 @@ const toggleMenu = () => {
             class="text-gray-700 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
             :class="{ 'text-primary-500 bg-primary-50': $route.name === 'Gallery' }"
           >
-            {{ $t('nav.gallery') }}
+            Galeria
           </router-link>
 
           <router-link
@@ -52,7 +51,7 @@ const toggleMenu = () => {
             class="text-gray-700 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
             :class="{ 'text-primary-500 bg-primary-50': $route.name === 'About' }"
           >
-            {{ $t('nav.about') }}
+            O Nas
           </router-link>
 
           <router-link
@@ -60,7 +59,7 @@ const toggleMenu = () => {
             class="text-gray-700 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
             :class="{ 'text-primary-500 bg-primary-50': $route.name === 'Contact' }"
           >
-            {{ $t('nav.contact') }}
+            Kontakt
           </router-link>
 
           <router-link
@@ -68,11 +67,8 @@ const toggleMenu = () => {
             class="text-gray-700 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
             :class="{ 'text-primary-500 bg-primary-50': $route.name === 'Regulamin' }"
           >
-            {{ $t('nav.terms') }}
+            Regulamin
           </router-link>
-
-          <!-- Language Switcher -->
-          <LanguageSwitcher variant="navbar" />
         </div>
 
         <!-- Mobile menu button -->
@@ -98,7 +94,7 @@ const toggleMenu = () => {
             class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-500 hover:bg-primary-50 transition-colors"
             :class="{ 'text-primary-500 bg-primary-50': $route.name === 'Home' }"
           >
-            {{ $t('nav.home') }}
+            Główna
           </router-link>
 
           <router-link
@@ -107,7 +103,7 @@ const toggleMenu = () => {
             class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-500 hover:bg-primary-50 transition-colors"
             :class="{ 'text-primary-500 bg-primary-50': $route.name === 'Rooms' }"
           >
-            {{ $t('nav.rooms') }}
+            Pokoje
           </router-link>
 
           <router-link
@@ -116,7 +112,7 @@ const toggleMenu = () => {
             class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-500 hover:bg-primary-50 transition-colors"
             :class="{ 'text-primary-500 bg-primary-50': $route.name === 'Gallery' }"
           >
-            {{ $t('nav.gallery') }}
+            Galeria
           </router-link>
 
           <router-link
@@ -125,7 +121,7 @@ const toggleMenu = () => {
             class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-500 hover:bg-primary-50 transition-colors"
             :class="{ 'text-primary-500 bg-primary-50': $route.name === 'About' }"
           >
-            {{ $t('nav.about') }}
+            O Nas
           </router-link>
 
           <router-link
@@ -134,7 +130,7 @@ const toggleMenu = () => {
             class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-500 hover:bg-primary-50 transition-colors"
             :class="{ 'text-primary-500 bg-primary-50': $route.name === 'Contact' }"
           >
-            {{ $t('nav.contact') }}
+            Kontakt
           </router-link>
 
           <router-link
@@ -143,13 +139,9 @@ const toggleMenu = () => {
             class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-500 hover:bg-primary-50 transition-colors"
             :class="{ 'text-primary-500 bg-primary-50': $route.name === 'Regulamin' }"
           >
-            {{ $t('nav.terms') }}
+            Regulamin
           </router-link>
 
-          <!-- Mobile Language Switcher -->
-          <div class="px-3 py-2">
-            <LanguageSwitcher variant="navbar" />
-          </div>
         </div>
       </div>
     </div>
