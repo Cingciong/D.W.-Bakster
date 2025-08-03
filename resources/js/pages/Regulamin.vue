@@ -4,7 +4,7 @@ import PageHeader from '../components/PageHeader.vue'
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-50">
+  <div class="min-h-screen bg-yellow-50">
     <!-- Nagłówek -->
     <PageHeader
       title='Regulamin <span class="text-teal">Pobytu</span>'
@@ -13,10 +13,10 @@ import PageHeader from '../components/PageHeader.vue'
 
     <!-- Treść regulaminu -->
     <div class="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-      <div class="bg-white shadow rounded-lg p-8">
+      <div class="bg-white shadow rounded-lg p-8 animate-fade-up animate-delay-100">
 
         <!-- § 1 Rezerwacja i pobytu -->
-        <section class="mb-8">
+        <section class="mb-8 animate-fade-up animate-delay-200">
           <h2 class="text-2xl font-semibold text-gray-900 mb-4">§ 1 Rezerwacja i pobytu</h2>
           <div class="prose prose-gray max-w-none">
             <ul class="list-disc pl-6 space-y-2 text-gray-700">
@@ -33,7 +33,7 @@ import PageHeader from '../components/PageHeader.vue'
         </section>
 
         <!-- § 2 Prawa i obowiązki -->
-        <section class="mb-8">
+        <section class="mb-8 animate-fade-up animate-delay-300">
           <h2 class="text-2xl font-semibold text-gray-900 mb-4">§ 2 Prawa i obowiązki</h2>
           <div class="prose prose-gray max-w-none">
             <ul class="list-disc pl-6 space-y-2 text-gray-700">

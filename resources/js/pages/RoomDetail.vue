@@ -283,7 +283,7 @@ const bookRoom = () => {
 </script>
 
 <template>
-  <div v-if="currentRoom" class="min-h-screen bg-gray-50">
+  <div v-if="currentRoom" class="min-h-screen bg-yellow-50">
     <!-- Hero Section -->
     <PageHeader
       :title="currentRoom.title"
@@ -293,14 +293,14 @@ const bookRoom = () => {
     <!-- Breadcrumb Navigation -->
 
     <!-- Main Content -->
-    <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+    <div class="max-w-screen-2xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
         <!-- Room Details -->
         <div class="lg:col-span-2">
           <!-- Image Gallery -->
           <div class="mb-8">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Galeria</h2>
+            <h2 class="text-4xl font-bold text-gray-900 mb-6">Galeria</h2>
             <div class="relative">
               <!-- Main Image -->
               <div class="relative h-96 rounded-lg bg-gray-100 shadow-xl  overflow-hidden">
@@ -330,7 +330,7 @@ const bookRoom = () => {
                 </button>
 
                 <!-- Image Counter -->
-                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white px-3 py-1 rounded-full text-sm">
+                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded-full text-lg">
                   {{ currentImageIndex + 1 }} / {{ currentRoom.images.length }}
                 </div>
               </div>
@@ -356,27 +356,27 @@ const bookRoom = () => {
 
           <!-- Room Features -->
           <div class="mb-8">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Wyposażenie</h2>
-            <div class="bg-white rounded-lg shadow-md p-6">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <h2 class="text-4xl font-bold text-gray-900 mb-6">Wyposażenie</h2>
+            <div class="bg-white rounded-lg shadow-md p-8">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div
                   v-for="feature in currentRoom.features"
                   :key="feature"
                   class="flex items-center"
                 >
-                  <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                  <span class="text-gray-700">{{ feature }}</span>
+                  <div class="w-3 h-3 bg-blue-500 rounded-full mr-4"></div>
+                  <span class="text-gray-700 text-xl">{{ feature }}</span>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Additional Info -->
-          <div class="bg-white rounded-lg shadow-md p-6">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Informacje Dodatkowe</h2>
+          <div class="bg-white rounded-lg shadow-md p-8">
+            <h2 class="text-4xl font-bold text-gray-900 mb-6">Informacje Dodatkowe</h2>
             <div class="prose max-w-none text-gray-600">
-              <p class="mb-4">{{ currentRoom.description }}</p>
-              <p>Ten pokój jest idealny dla {{ currentRoom.capacity }} {{ currentRoom.capacity === 1 ? 'osoby' : 'osób' }}
+              <p class="mb-6 text-xl">{{ currentRoom.description }}</p>
+              <p class="text-xl">Ten pokój jest idealny dla {{ currentRoom.capacity }} {{ currentRoom.capacity === 1 ? 'osoby' : 'osób' }}
                  i oferuje powierzchnię {{ currentRoom.size }}.
                  {{ currentRoom.bedType }} zapewnia komfortowy sen,
                  a wszystkie niezbędne udogodnienia sprawią, że Twój pobyt będzie niezapomniany.</p>
@@ -386,51 +386,51 @@ const bookRoom = () => {
 
         <!-- Booking Sidebar -->
         <div class="lg:col-span-1">
-          <div class="bg-white rounded-lg shadow-md p-6 sticky top-8">
+          <div class="bg-white rounded-lg shadow-md p-8 sticky top-8">
 
             <!-- Quick Info -->
-            <div class="space-y-3 mb-6">
-              <div class="flex justify-between items-center py-2 border-b border-gray-100">
-                <span class="text-gray-600">Pojemność:</span>
-                <span class="font-semibold">{{ currentRoom.capacity }} {{ currentRoom.capacity === 1 ? 'osoba' : 'osoby' }}</span>
+            <div class="space-y-4 mb-8">
+              <div class="flex justify-between items-center py-3 border-b border-gray-100">
+                <span class="text-gray-600 text-xl">Pojemność:</span>
+                <span class="font-semibold text-xl">{{ currentRoom.capacity }} {{ currentRoom.capacity === 1 ? 'osoba' : 'osoby' }}</span>
               </div>
-              <div class="flex justify-between items-center py-2 border-b border-gray-100">
-                <span class="text-gray-600">Powierzchnia:</span>
-                <span class="font-semibold">{{ currentRoom.size }}</span>
+              <div class="flex justify-between items-center py-3 border-b border-gray-100">
+                <span class="text-gray-600 text-xl">Powierzchnia:</span>
+                <span class="font-semibold text-xl">{{ currentRoom.size }}</span>
               </div>
-              <div class="flex justify-between items-center py-2 border-b border-gray-100">
-                <span class="text-gray-600">Łóżko:</span>
-                <span class="font-semibold">{{ currentRoom.bedType }}</span>
+              <div class="flex justify-between items-center py-3 border-b border-gray-100">
+                <span class="text-gray-600 text-xl">Łóżko:</span>
+                <span class="font-semibold text-xl">{{ currentRoom.bedType }}</span>
               </div>
             </div>
 
             <!-- Booking Button -->
             <button
               @click="bookRoom"
-              class="w-full py-3 px-6 text-white font-semibold rounded-lg transition-all bg-secondary-500 duration-300 cursor-pointer hover:bg-secondary-500/60 hover:shadow-lg hover:transform hover:scale-105"
+              class="w-full py-4 px-8 text-white text-xl font-semibold rounded-lg transition-all bg-secondary-500 duration-300 cursor-pointer hover:bg-secondary-500/60 hover:shadow-lg hover:transform hover:scale-105"
 
             >
               Skontaktuj się
             </button>
 
             <!-- Contact Info -->
-            <div class="mt-6 pt-6 border-t border-gray-200 text-center">
-              <p class="text-sm text-gray-600 mb-2">Potrzebujesz pomocy?</p>
-              <div class="text-sm">
-                <a href="tel:+48586752404" class="text-blue-600 hover:text-blue-800 block">tel./fax: 058 675 24 04</a>
-                <a href="tel:+48733915030" class="text-blue-600 hover:text-blue-800 block">tel. kom: +48 733 915 030</a>
+            <div class="mt-8 pt-8 border-t border-gray-200 text-center">
+              <p class="text-lg text-gray-600 mb-3">Potrzebujesz pomocy?</p>
+              <div class="text-lg">
+                <a href="tel:+48586752404" class="text-blue-600 hover:text-blue-800 block mb-2">tel./fax: 058 675 24 04</a>
+                <a href="tel:+48733915030" class="text-blue-600 hover:text-blue-800 block mb-2">tel. kom: +48 733 915 030</a>
                 <a href="mailto:bakster@bakster.pl" class="text-blue-600 hover:text-blue-800 block">bakster@bakster.pl</a>
               </div>
             </div>
           </div>
 
           <!-- Navigation -->
-          <div class="mt-6">
+          <div class="mt-8">
             <router-link
               to="/pokoje"
-              class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-200"
+              class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-200 text-lg"
             >
-              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
               </svg>
               Powrót do wszystkich pokoi
@@ -445,8 +445,9 @@ const bookRoom = () => {
 <style scoped>
 /* Custom styles for better visual appeal */
 .prose p {
-  margin-bottom: 1rem;
-  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  font-size: 1.25rem;
 }
 
 :deep(.hero-bg) {

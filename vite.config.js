@@ -12,10 +12,16 @@ export default defineConfig({
         }),
     ],
     server: {
-        host: '0.0.0.0',
-        port: 5173,
+        host: '0.0.0.0', // Listen on all interfaces
+        port: 5176,
+        strictPort: true,
+        cors: {
+            origin: ['http://194.49.105.216:8000', 'http://192.168.0.22:8000', 'http://localhost:8000'],
+            credentials: true
+        },
         hmr: {
-            host: 'localhost'
+            host: 'localhost',
+            port: 5176
         }
     },
     resolve: {

@@ -14,7 +14,7 @@ const goBack = () => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-50">
+  <div class="min-h-screen bg-yellow-50">
     <!-- Header -->
     <PageHeader
       title='Strona <span class="text-teal">nie znaleziona</span> '

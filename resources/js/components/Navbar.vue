@@ -10,21 +10,25 @@ const toggleMenu = () => {
 
 <template>
   <nav class="fixed top-0 left-0 right-0 bg-white/10 backdrop-blur-md shadow-lg z-50 select-none ">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20 lg:h-24">
 
-        <div class="flex items-center">
-            <a href="/" class="text-2xl font-bold flex flex-row gap-5 py-auto  text-teal">
-                <img :src="'/img/logo.svg'" alt="D.W. Bakster Logo" class="h-10 w-10 rounded-md opacity-90 hover:opacity-45 duration-300">
-                <span class="text-2xl font-bold hover:text-teal/55 duration-300 text-teal my-auto ">Pensjonat Bakster</span>
+        <!-- Logo and Title - Left Side -->
+        <div class="flex items-center flex-shrink-0">
+            <a href="/" class="flex flex-row gap-3 lg:gap-4 py-2 text-teal">
+                <img :src="'/img/logo.svg'" alt="D.W. Bakster Logo" class="h-12 w-12 lg:h-16 lg:w-16 rounded-md opacity-90 hover:opacity-45 duration-300">
+                <span class="text-xl lg:text-5xl font-bold hover:text-teal/55 duration-300 text-teal my-auto">
+                    <span class="hidden lg:inline">Pensjonat Bakster</span>
+                    <span class="lg:hidden">Bakster</span>
+                </span>
             </a>
         </div>
 
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center space-x-8">
+        <!-- Desktop Navigation - Right Side with More Space -->
+        <div class="hidden md:flex text-2xl items-center space-x-4 lg:space-x-6 flex-1 justify-end">
           <router-link
             to="/"
-            class="text-gray-700 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+            class="text-gray-700 hover:text-primary-500 px-3 py-2  rounded-md text-2xl font-medium transition-colors"
             :class="{ 'text-primary-500 bg-primary-50': $route.name === 'Home' }"
           >
             Główna
@@ -32,7 +36,7 @@ const toggleMenu = () => {
 
           <router-link
             to="/pokoje"
-            class="text-gray-700 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+            class="text-gray-700 hover:text-primary-500 px-3 py-2 rounded-md text-2xl font-medium transition-colors"
             :class="{ 'text-primary-500 bg-primary-50': $route.name === 'Rooms' }"
           >
             Pokoje
@@ -40,7 +44,7 @@ const toggleMenu = () => {
 
           <router-link
             to="/galeria"
-            class="text-gray-700 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+            class="text-gray-700 hover:text-primary-500 px-3 py-2 rounded-md text-2xl font-medium transition-colors"
             :class="{ 'text-primary-500 bg-primary-50': $route.name === 'Gallery' }"
           >
             Galeria
@@ -48,7 +52,7 @@ const toggleMenu = () => {
 
           <router-link
             to="/o-nas"
-            class="text-gray-700 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+            class="text-gray-700 hover:text-primary-500 px-3 py-2 rounded-md text-2xl font-medium transition-colors"
             :class="{ 'text-primary-500 bg-primary-50': $route.name === 'About' }"
           >
             O Nas
@@ -56,7 +60,7 @@ const toggleMenu = () => {
 
           <router-link
             to="/kontakt"
-            class="text-gray-700 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+            class="text-gray-700 hover:text-primary-500 px-3 py-2 rounded-md text-2xl font-medium transition-colors"
             :class="{ 'text-primary-500 bg-primary-50': $route.name === 'Contact' }"
           >
             Kontakt
@@ -64,7 +68,7 @@ const toggleMenu = () => {
 
           <router-link
             to="/regulamin"
-            class="text-gray-700 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+            class="text-gray-700 hover:text-primary-500 px-3 py-2 rounded-md text-2xl font-medium transition-colors"
             :class="{ 'text-primary-500 bg-primary-50': $route.name === 'Regulamin' }"
           >
             Regulamin
