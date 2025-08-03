@@ -12,11 +12,11 @@ export default defineConfig({
         }),
     ],
     server: {
-        host: '0.0.0.0', // Listen on all interfaces
+        host: 'localhost', // Changed to localhost for local development
         port: 5176,
         strictPort: true,
         cors: {
-            origin: ['http://194.49.105.216:8000', 'http://192.168.0.22:8000', 'http://localhost:8000'],
+            origin: ['http://127.0.0.1:8000', 'http://localhost:8000', 'http://194.49.105.216:8000', 'http://192.168.0.22:8000'],
             credentials: true
         },
         hmr: {
