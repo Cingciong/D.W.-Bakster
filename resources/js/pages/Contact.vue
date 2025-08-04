@@ -23,17 +23,7 @@
 
             <div class="flex items-start">
               <div class="flex-shrink-0">
-                <span class="text-2xl">📞</span>
-              </div>
-              <div class="ml-4 text-2xl">
-                <h3 class=" font-semibold text-gray-900">Telefon / Faks</h3>
-                <p class="text-gray-600 text-xl">058 / 675-24-04</p>
-              </div>
-            </div>
-
-            <div class="flex items-start">
-              <div class="flex-shrink-0">
-                <span class="text-2xl">📱</span>
+                <span class="text-2xl"></span>
               </div>
               <div class="ml-4 text-2xl">
                 <h3 class=" font-semibold text-gray-900">Telefon komórkowy</h3>

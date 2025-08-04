@@ -32,7 +32,6 @@ const currentYear = computed(() => new Date().getFullYear())
           <h3 class="text-2xl font-semibold mb-4 text-blue-900">Kontakt</h3>
           <p class="text-xl text-gray-700">ul. Gawędy 14</p>
           <p class="text-xl text-gray-700">84-120 Władysławowo</p>
-          <p class="text-xl text-gray-700">tel./fax. 058/675-24-04</p>
           <p class="text-xl text-gray-700">tel. kom. +48 733 915 030</p>
           <p class="text-xl text-gray-700">e-mail: bakster@bakster.pl</p>
         </div>

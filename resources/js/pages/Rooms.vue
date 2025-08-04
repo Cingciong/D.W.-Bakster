@@ -57,8 +57,9 @@ const scrollToPricing = () => {
           <li>• 14 m²</li>
           <li>• Łóżko pojedyncze</li>
           <li>• Prywatna łazienka z prysznicem</li>
-          <li>• Płaski Telewizor</li>
+          <li>• Wi-Fi</li>
           <li>• Mini-lodówka, czajnik</li>
+          <li>• Ręczniki</li>
           <li>• Mały zestaw kosmetyków, suszarka</li>
           <li>• Zestaw plażowy: koc, parawan, leżak</li>
           <li>• Bezpłatne miejsce parkingowe</li>
@@ -79,8 +80,9 @@ const scrollToPricing = () => {
           <li>• 16–23 m²</li>
           <li>• Łóżko podwójne</li>
           <li>• Prywatna łazienka z prysznicem</li>
-          <li>• Płaski Telewizor</li>
+          <li>• Wi-Fi</li>
           <li>• Mini-lodówka, czajnik</li>
+          <li>• Ręczniki</li>
           <li>• Mały zestaw kosmetyków, suszarka</li>
           <li>• Balkon ze stoliczkiem i krzesłami</li>
           <li>• Zestaw plażowy: koc, parawan, leżak</li>
@@ -102,8 +104,9 @@ const scrollToPricing = () => {
           <li>• 16 m²</li>
           <li>• Łóżko podwójne</li>
           <li>• Prywatna łazienka z prysznicem</li>
-          <li>• Płaski Telewizor</li>
+          <li>• Wi-Fi</li>
           <li>• Mini-lodówka, czajnik</li>
+          <li>• Ręczniki</li>
           <li>• Mały zestaw kosmetyków, suszarka</li>
           <li>• Zestaw plażowy: koc, parawan, leżak</li>
           <li>• Bezpłatne miejsce parkingowe</li>
@@ -124,8 +127,9 @@ const scrollToPricing = () => {
           <li>• 29 m²</li>
           <li>• Łóżko podwójne + łóżko pojedyncze</li>
           <li>• Prywatna łazienka z prysznicem</li>
-          <li>• Płaski Telewizor</li>
+          <li>• Wi-Fi</li>
           <li>• Mini-lodówka, czajnik</li>
+          <li>• Ręczniki</li>
           <li>• Mały zestaw kosmetyków, suszarka</li>
           <li>• Balkon ze stoliczkiem i krzesłami</li>
           <li>• Zestaw plażowy: koc, parawan, leżak</li>
@@ -147,7 +151,9 @@ const scrollToPricing = () => {
           <li>• ok. 32–35 m²</li>
           <li>• Łóżko podwójne + łóżko pojedyncze</li>
           <li>• Prywatna łazienka z prysznicem</li>
-          <li>• Płaski Telewizor</li>
+          <li>• Wi-Fi</li>
+          <li>• Mini-lodówka, czajnik</li>
+          <li>• Ręczniki</li>
           <li>• Mały zestaw kosmetyków, suszarka</li>
           <li>• Balkon ze stoliczkiem i krzesłami</li>
           <li>• Zestaw plażowy: koc, parawan, leżak</li>
@@ -169,7 +175,9 @@ const scrollToPricing = () => {
           <li>• 35–40 m²</li>
           <li>• Łóżko podwójne + pojedyncze</li>
           <li>• Prywatna łazienka z przysznicem</li>
-          <li>• Płaski Telewizor</li>
+          <li>• Wi-Fi</li>
+          <li>• Mini-lodówka, czajnik</li>
+          <li>• Ręczniki</li>
           <li>• Mały zestaw kosmetyków, suszarka</li>
           <li>• Balkon ze stoliczkiem i krzesłami</li>
           <li>• Zestaw plażowy: koc, parawan, leżak</li>
@@ -191,8 +199,9 @@ const scrollToPricing = () => {
           <li>• 29–32 m²</li>
           <li>• Łóżko podwójne + dwa pojedyncze</li>
           <li>• Prywatna łazienka z prysznicem</li>
-          <li>• Płaski Telewizor</li>
+          <li>• Wi-Fi</li>
           <li>• Lodówka, czajnik</li>
+          <li>• Ręczniki</li>
           <li>• Mały zestaw kosmetyków</li>
           <li>• Balkon ze stoliczkiem i krzesłami</li>
           <li>• Zestaw plażowy: koc, parawan, leżak</li>
@@ -216,8 +225,9 @@ const scrollToPricing = () => {
           <li>• Łóżko podwójne + 2 pojedyncze</li>
           <li>• Aneks kuchenny, jadalnia, balkon</li>
           <li>• 2 łazienki (w tym jedna z narożną wanną)</li>
-          <li>• Płaski telewizor</li>
+          <li>• Wi-Fi</li>
           <li>• Lodówka, czajnik, pełne wyposażenie</li>
+          <li>• Ręczniki</li>
           <li>• Mały zestaw kosmetyków</li>
           <li>• Widok na morze z balkonu i okien dachowych</li>
           <li>• Bezpłatne miejsce parkingowe</li>

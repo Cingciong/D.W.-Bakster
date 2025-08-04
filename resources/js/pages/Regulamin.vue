@@ -93,7 +93,6 @@ import PageHeader from '../components/PageHeader.vue'
           <div class="mt-4">
             <p class="text-sm text-gray-500">
               <strong>Adres:</strong> ul. Gawędy 14, 84-120 Władysławowo<br>
-              <strong>Tel./fax:</strong> 058/ 675-24-04<br>
               <strong>Telefon kom.:</strong> +48 733 915 030<br>
               <strong>Email:</strong> bakster@bakster.pl
             </p>

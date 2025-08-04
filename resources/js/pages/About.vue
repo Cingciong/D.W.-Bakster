@@ -41,7 +41,7 @@
           <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <span class="text-4xl">🍳</span>
           </div>
-          <h3 class="text-3xl font-semibold text-gray-900 mb-4">Darmowe śniadania</h3>
+          <h3 class="text-3xl font-semibold text-gray-900 mb-4">Śniadania</h3>
           <ul class="text-xl text-gray-600 list-disc list-inside mb-3 space-y-2">
             <li>Pyszne śniadanie serwowane codziennie</li>
             <li>Świeże produkty lokalne</li>
@@ -65,7 +65,7 @@
           <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <span class="text-4xl">🅿️</span>
           </div>
-          <h3 class="text-3xl font-semibold text-gray-900 mb-4">Darmowy parking</h3>
+          <h3 class="text-3xl font-semibold text-gray-900 mb-4">Parking</h3>
           <ul class="text-xl text-gray-600 list-disc list-inside mb-3 space-y-2">
             <li>Monitorowany parking na około 18 samochodów</li>
             <li>Bezpieczne, zamykane miejsce na rowery</li>
@@ -81,7 +81,7 @@
           <ul class="text-xl text-gray-600 list-disc list-inside mb-3 space-y-2">
             <li>19 w pełni wyposażonych pokoi z łazienkami</li>
             <li>Dwupoziomowy apartament dla bardziej wymagających</li>
-            <li>Na wyposażeniu: Wi-Fi, TV satelitarna, lodówka, czajnik, zestaw naczyń</li>
+            <li>Na wyposażeniu: Wi-Fi, lodówka, czajnik, zestaw naczyń, ręczniki</li>
           </ul>
         </div>
 
