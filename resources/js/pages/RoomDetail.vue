@@ -1,473 +1,292 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { useRooms } from '../composables/useRooms.js'
 import PageHeader from '../components/PageHeader.vue'
 
 const route = useRoute()
 const router = useRouter()
 
+// Use the rooms composable
+const { room, loading, error, fetchRoom } = useRooms()
 
-const roomTypes = {
-  'jednosobowy': {
-    title: 'Pokój <span class="text-teal">Jednosobowy</span>',
-    description: 'Komfortowy pokój dla jednej osoby z widokiem na ogród. Idealny na spokojny wypoczynek nad morzem.',
-    capacity: 1,
-    size: '14 m²',
-    bedType: 'Łóżko pojedyncze',
-    features: [
-      '1 osoba',
-      '14 m²',
-      'Łóżko pojedyncze',
-      'Prywatna łazienka z prysznicem',
-      'Wi-Fi',
-      'Mini-lodówka, czajnik',
-      'Ręczniki',
-      'Mały zestaw kosmetyków, suszarka',
-      'Zestaw plażowy: koc, parawan, leżak',
-      'Bezpłatne miejsce parkingowe',
-      'Śniadanie w cenie'
-    ],
-    images: [
-      '/img/1-osobowe/untitled-1.JPG',
-      '/img/1-osobowe/untitled-2.JPG',
-      '/img/1-osobowe/untitled-3.JPG',
-      '/img/1-osobowe/untitled-4.JPG',
-      '/img/1-osobowe/untitled-5.JPG'
-    ]
-  },
-  'dwuosobowy': {
-    title: 'Pokój <span class="text-teal">Dwuosobowy</span>',
-    description: 'Przytulny pokój dla dwóch osób z balkonem i podwójnym łóżkiem.',
-    capacity: 2,
-    size: '16–23 m²',
-    bedType: 'Łóżko podwójne',
-    features: [
-      '2 osoby',
-      '16–23 m²',
-      'Łóżko podwójne',
-      'Prywatna łazienka z prysznicem',
-      'Wi-Fi',
-      'Mini-lodówka, czajnik',
-      'Ręczniki',
-      'Mały zestaw kosmetyków, suszarka',
-      'Balkon ze stoliczkiem i krzesłami',
-      'Zestaw plażowy: koc, parawan, leżak',
-      'Bezpłatne miejsce parkingowe',
-      'Śniadanie w cenie'
-    ],
-    images: [
-      '/img/2-osobowe/untitled-7.JPG',
-      '/img/2-osobowe/untitled-2.JPG',
-      '/img/2-osobowe/untitled-3.JPG',
-      '/img/2-osobowe/untitled-4.JPG',
-      '/img/2-osobowe/untitled-5.JPG',
-      '/img/2-osobowe/untitled-6.JPG',
-      '/img/2-osobowe/untitled.JPG',
-      '/img/2-osobowe/untitled-8.JPG'
-    ]
-  },
-  'dwuosobowy-economy': {
-    title: 'Pokój <span class="text-teal">Dwuosobowy Economy</span>',
-    description: 'Funkcjonalny pokój dla dwóch osób z podstawowym wyposażeniem i dostępem do wszystkich udogodnień.',
-    capacity: 2,
-    size: '16 m²',
-    bedType: 'Łóżko podwójne',
-    features: [
-      '2 osoby',
-      '16 m²',
-      'Łóżko podwójne',
-      'Prywatna łazienka z prysznicem',
-      'Wi-Fi',
-      'Mini-lodówka, czajnik',
-      'Ręczniki',
-      'Mały zestaw kosmetyków, suszarka',
-      'Zestaw plażowy: koc, parawan, leżak',
-      'Bezpłatne miejsce parkingowe',
-      'Śniadanie w cenie'
-    ],
-    images: [
-      '/img/2-osobowy-economy/untitled-2.JPG',
-      '/img/2-osobowy-economy/untitled-6.JPG',
-      '/img/2-osobowy-economy/untitled-3.JPG',
-      '/img/2-osobowy-economy/untitled-4.JPG',
-      '/img/2-osobowy-economy/untitled-5.JPG',
-      '/img/2-osobowy-economy/untitled-1.JPG',
-      '/img/2-osobowy-economy/untitled-7.JPG'
-    ]
-  },
-  'trzyosobowy': {
-    title: 'Pokój <span class="text-teal">Trzyosobowy</span>',
-    description: 'Przestronny pokój dla trzech osób z balkonem i wygodnymi łóżkami.',
-    capacity: 3,
-    size: '29 m²',
-    bedType: 'Łóżko podwójne + łóżko pojedyncze',
-    features: [
-      '3 osoby',
-      '29 m²',
-      'Łóżko podwójne + łóżko pojedyncze',
-      'Prywatna łazienka z prysznicem',
-      'Wi-Fi',
-      'Mini-lodówka, czajnik',
-      'Ręczniki',
-      'Mały zestaw kosmetyków, suszarka',
-      'Balkon ze stoliczkiem i krzesłami',
-      'Zestaw plażowy: koc, parawan, leżak',
-      'Bezpłatne miejsce parkingowe',
-      'Śniadanie w cenie'
-    ],
-    images: [
-      '/img/3-osobowy/untitled-6.JPG',
-      '/img/3-osobowy/untitled-2.JPG',
-      '/img/3-osobowy/untitled-3.JPG',
-      '/img/3-osobowy/untitled-4.JPG',
-      '/img/3-osobowy/untitled-1.JPG',
-      '/img/3-osobowy/untitled-5.JPG',
-      '/img/3-osobowy/untitled-7.JPG',
-      '/img/3-osobowy/untitled-8.JPG'
-    ]
-  },
-  'trzyosobowy-standard': {
-    title: 'Pokój <span class="text-teal">Trzyosobowy Standard</span>',
-    description: 'Wygodny pokój dla trzech osób z większą przestrzenią i lepszym standardem wyposażenia.',
-    capacity: 3,
-    size: 'ok. 32–35 m²',
-    bedType: 'Łóżko podwójne + łóżko pojedyncze',
-    features: [
-      '3 osoby',
-      'ok. 32–35 m²',
-      'Łóżko podwójne + łóżko pojedyncze',
-      'Prywatna łazienka z prysznicem',
-      'Wi-Fi',
-      'Mini-lodówka, czajnik',
-      'Ręczniki',
-      'Mały zestaw kosmetyków, suszarka',
-      'Balkon ze stoliczkiem i krzesłami',
-      'Zestaw plażowy: koc, parawan, leżak',
-      'Bezpłatne miejsce parkingowe',
-      'Śniadanie w cenie'
-    ],
-    images: [
-      '/img/3-osobowy-standard/untitled-1.JPG',
-      '/img/3-osobowy-standard/untitled-2.JPG',
-      '/img/3-osobowy-standard/untitled-3.JPG',
-      '/img/3-osobowy-standard/untitled-4.JPG'
-    ]
-  },
-  'trzyosobowy-morze': {
-    title: 'Pokój <span class="text-teal">Trzyosobowy z Widokiem na Morze</span>',
-    description: 'Ekskluzywny pokój z balkonem i pięknym widokiem na Bałtyk.',
-    capacity: 3,
-    size: '35–40 m²',
-    bedType: 'Łóżko podwójne + pojedyncze',
-    features: [
-      '3 osoby',
-      '35–40 m²',
-      'Łóżko podwójne + pojedyncze',
-      'Prywatna łazienka z przysznicem',
-      'Wi-Fi',
-      'Mini-lodówka, czajnik',
-      'Ręczniki',
-      'Mały zestaw kosmetyków, suszarka',
-      'Balkon ze stoliczkiem i krzesłami',
-      'Zestaw plażowy: koc, parawan, leżak',
-      'Bezpłatne miejsce parkingowe',
-      'Śniadanie w cenie'
-    ],
-    images: [
-      '/img/3-osobowe-widok/untitled-1.JPG',
-      '/img/3-osobowe-widok/untitled-2.JPG',
-      '/img/3-osobowe-widok/untitled-3.JPG',
-      '/img/3-osobowe-widok/untitled-4.JPG',
-      '/img/3-osobowe-widok/untitled-5.JPG'
-    ]
-  },
-  'czteroosobowy': {
-    title: 'Pokój <span class="text-teal">Czteroosobowy</span>',
-    description: 'Idealny dla rodzin – przestronny pokój z balkonem i kompletnym wyposażeniem.',
-    capacity: 4,
-    size: '29–32 m²',
-    bedType: 'Łóżko podwójne + dwa pojedyncze',
-    features: [
-      '4 osoby',
-      '29–32 m²',
-      'Łóżko podwójne + dwa pojedyncze',
-      'Prywatna łazienka z prysznicem',
-      'Wi-Fi',
-      'Lodówka, czajnik',
-      'Ręczniki',
-      'Mały zestaw kosmetyków',
-      'Balkon ze stoliczkiem i krzesłami',
-      'Zestaw plażowy: koc, parawan, leżak',
-      'Bezpłatne miejsce parkingowe',
-      'Śniadanie w cenie'
-    ],
-    images: [
-      '/img/4-osobowe/untitled-1.JPG',
-      '/img/4-osobowe/untitled-2.JPG',
-      '/img/4-osobowe/untitled-3.JPG',
-      '/img/4-osobowe/untitled-4.JPG',
-      '/img/4-osobowe/untitled-5.JPG',
-      '/img/4-osobowe/untitled-6.JPG',
-      '/img/4-osobowe/untitled-7.JPG',
-      '/img/4-osobowe/untitled-8.JPG'
-    ]
-  },
-  'apartament-dwupoziomowy': {
-    title: 'Apartament <span class="text-teal">Dwupoziomowy</span>',
-    description: 'Luksusowy apartament z pięknym widokiem na morze – idealny na dłuższy pobyt lub rodzinne wakacje.',
-    capacity: 6,
-    size: 'ok. 60–80 m²',
-    bedType: 'Łóżko podwójne + 2 pojedyncze',
-    features: [
-      '4–6 osób',
-      'ok. 60–80 m²',
-      '2 poziomy: sypialnia + salon z kuchnią',
-      'Łóżko podwójne + 2 pojedyncze',
-      'Aneks kuchenny, jadalnia, balkon',
-      '2 łazienki (w tym jedna z narożną wanną)',
-      'Wi-Fi',
-      'Lodówka, czajnik, pełne wyposażenie',
-      'Ręczniki',
-      'Mały zestaw kosmetyków',
-      'Widok na morze z balkonu i okien dachowych',
-      'Bezpłatne miejsce parkingowe',
-      'Śniadanie w cenie'
-    ],
-    images: [
-      '/img/apartament/untitled-7.JPG',
-      '/img/apartament/untitled-2.JPG',
-      '/img/apartament/untitled-3.JPG',
-      '/img/apartament/untitled-4.JPG',
-      '/img/apartament/untitled-5.JPG',
-      '/img/apartament/untitled-6.JPG',
-      '/img/apartament/untitled-1.JPG',
-      '/img/apartament/untitled-8.JPG',
-      '/img/apartament/untitled-9.JPG',
-      '/img/apartament/untitled-10.JPG'
-    ]
-  }
-};
-
-
-
-// Get current room data
-const currentRoom = computed(() => {
+// Load room data on component mount
+onMounted(async () => {
   const slug = route.params.slug
-  return roomTypes[slug] || null
-})
-
-// Current image index for gallery
-const currentImageIndex = ref(0)
-
-// Check if room exists
-onMounted(() => {
-  if (!currentRoom.value) {
-    router.push('/404')
+  if (slug) {
+    await fetchRoom(slug)
   }
 })
 
-// Gallery navigation
+// Computed properties for the room
+const roomTitle = computed(() => {
+  if (!room.value) return ''
+  return `${room.value.name} <span class="text-teal"></span>`
+})
+
+const roomDescription = computed(() => room.value?.description || room.value?.short_description || '')
+const roomImages = computed(() => room.value?.all_images_urls || [])
+const mainImage = computed(() => room.value?.main_image_url || '')
+const amenitiesHtml = computed(() => room.value?.amenities_html || '')
+
+// Gallery and booking logic
+const selectedImageIndex = ref(0)
+const showGallery = ref(false)
+
+const selectImage = (index) => {
+  selectedImageIndex.value = index
+}
+
+const previousImage = () => {
+  if (roomImages.value.length > 0) {
+    selectedImageIndex.value = selectedImageIndex.value > 0 
+      ? selectedImageIndex.value - 1 
+      : roomImages.value.length - 1
+  }
+}
+
 const nextImage = () => {
-  if (currentRoom.value) {
-    currentImageIndex.value = (currentImageIndex.value + 1) % currentRoom.value.images.length
+  if (roomImages.value.length > 0) {
+    selectedImageIndex.value = selectedImageIndex.value < roomImages.value.length - 1 
+      ? selectedImageIndex.value + 1 
+      : 0
   }
 }
 
-const prevImage = () => {
-  if (currentRoom.value) {
-    currentImageIndex.value = currentImageIndex.value === 0
-      ? currentRoom.value.images.length - 1
-      : currentImageIndex.value - 1
-  }
-}
-
-const setCurrentImage = (index) => {
-  currentImageIndex.value = index
-}
-
-// Book room function
-const bookRoom = () => {
-  // Redirect to contact page or booking system
-  router.push('/kontakt')
+const handleBooking = () => {
+  router.push({
+    path: '/kontakt',
+    query: { room: room.value?.name }
+  })
 }
 </script>
 
 <template>
-  <div v-if="currentRoom" class="min-h-screen bg-yellow-50">
-    <!-- Hero Section -->
-    <PageHeader
-      :title="currentRoom.title"
-      :description="currentRoom.description"
-    />
+  <div class="min-h-screen bg-yellow-50">
+    
+    <!-- Loading state -->
+    <div v-if="loading" class="flex justify-center items-center py-20">
+      <div class="animate-spin rounded-full h-16 w-16 border-b-2 border-teal-600"></div>
+      <span class="ml-4 text-xl text-gray-600">Ładowanie pokoju...</span>
+    </div>
 
-    <!-- Breadcrumb Navigation -->
+    <!-- Error state -->
+    <div v-else-if="error" class="min-h-screen flex items-center justify-center">
+      <div class="bg-red-50 border border-red-200 rounded-lg p-8 text-center max-w-md">
+        <div class="text-red-600 text-xl mb-4">⚠️ Wystąpił błąd</div>
+        <p class="text-red-700 mb-4">{{ error }}</p>
+        <button 
+          @click="() => fetchRoom(route.params.slug)" 
+          class="px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors mr-4"
+        >
+          Spróbuj ponownie
+        </button>
+        <button 
+          @click="router.push('/pokoje')" 
+          class="px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
+        >
+          Powrót do pokojów
+        </button>
+      </div>
+    </div>
 
-    <!-- Main Content -->
-    <div class="max-w-screen-2xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <!-- Room content -->
+    <div v-else-if="room">
+      <!-- Hero Section -->
+      <PageHeader
+        :title="roomTitle"
+        :description="roomDescription"
+      />
 
-        <!-- Room Details -->
-        <div class="lg:col-span-2">
-          <!-- Image Gallery -->
-          <div class="mb-8">
-            <h2 class="text-4xl font-bold text-gray-900 mb-6">Galeria</h2>
-            <div class="relative">
-              <!-- Main Image -->
-              <div class="relative h-96 rounded-lg bg-gray-100 shadow-xl  overflow-hidden">
-                <img
-                  :src="currentRoom.images[currentImageIndex]"
-                  :alt="currentRoom.title"
-                  class="w-auto h-full mx-auto bg-gray-300 object-cover transition-transform duration-300"
+      <!-- Main Content -->
+      <div class="max-w-screen-2xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-                />
-
-                <!-- Navigation Arrows -->
-                <button
-                  @click="prevImage"
-                  class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-gray-300/80  rounded-full p-2 transition-all duration-200"
-                >
-                  <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                  </svg>
-                </button>
-                <button
-                  @click="nextImage"
-                  class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80  hover:bg-gray-300/80 rounded-full p-2 transition-all duration-200"
-                >
-                  <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </button>
-
-                <!-- Image Counter -->
-                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded-full text-lg">
-                  {{ currentImageIndex + 1 }} / {{ currentRoom.images.length }}
-                </div>
-              </div>
-
-              <!-- Thumbnails -->
-              <div class="grid grid-cols-3 gap-2 mt-4">
-                <button
-                  v-for="(image, index) in currentRoom.images"
-                  :key="index"
-                  @click="setCurrentImage(index)"
-                  class="relative h-24 rounded-lg overflow-hidden transition-all duration-200"
-                  :class="currentImageIndex === index ? 'ring-4 ring-blue-500' : 'hover:opacity-75'"
-                >
+          <!-- Room Details -->
+          <div class="lg:col-span-2">
+            <!-- Image Gallery -->
+            <div class="mb-8">
+              <h2 class="text-4xl font-bold text-gray-900 mb-6">Galeria</h2>
+              <div class="relative">
+                <!-- Main Image -->
+                <div v-if="roomImages.length > 0" class="relative h-96 rounded-lg bg-gray-100 shadow-xl overflow-hidden">
                   <img
-                    :src="image"
-                    :alt="`${currentRoom.title} - zdjęcie ${index + 1}`"
-                    class="w-full h-full object-cover img"
+                    :src="roomImages[selectedImageIndex]"
+                    :alt="room.name"
+                    class="w-full h-full object-cover"
                   />
-                </button>
+                  
+                  <!-- Navigation arrows -->
+                  <button
+                    v-if="roomImages.length > 1"
+                    @click="previousImage"
+                    class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all"
+                  >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                  </button>
+                  
+                  <button
+                    v-if="roomImages.length > 1"
+                    @click="nextImage"
+                    class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all"
+                  >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </button>
+
+                  <!-- Image counter -->
+                  <div v-if="roomImages.length > 1" class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-3 py-1 rounded-full text-sm">
+                    {{ selectedImageIndex + 1 }} / {{ roomImages.length }}
+                  </div>
+                </div>
+
+                <!-- Thumbnail Gallery -->
+                <div v-if="roomImages.length > 1" class="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-2 mt-4">
+                  <div
+                    v-for="(image, index) in roomImages"
+                    :key="index"
+                    @click="selectImage(index)"
+                    class="relative h-20 rounded-lg overflow-hidden cursor-pointer border-2 transition-all duration-200"
+                    :class="[
+                      selectedImageIndex === index
+                        ? 'border-teal-500 shadow-md'
+                        : 'border-gray-200 hover:border-gray-300'
+                    ]"
+                  >
+                    <img
+                      :src="image"
+                      :alt="`${room.name} - zdjęcie ${index + 1}`"
+                      class="w-full h-full object-cover transition-transform duration-200 hover:scale-105"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Room Description -->
+            <div class="mb-8">
+              <h2 class="text-4xl font-bold text-gray-900 mb-6">Opis pokoju</h2>
+              <div class="prose prose-lg max-w-none">
+                <p class="text-xl text-gray-700 leading-relaxed">{{ roomDescription }}</p>
+              </div>
+            </div>
+
+            <!-- Room Features -->
+            <div v-if="amenitiesHtml" class="mb-8">
+              <h2 class="text-4xl font-bold text-gray-900 mb-6">Udogodnienia</h2>
+              <div class="bg-white rounded-lg p-8 shadow-md">
+                <div 
+                  class="amenities-content text-lg text-gray-700"
+                  v-html="amenitiesHtml"
+                ></div>
               </div>
             </div>
           </div>
 
-          <!-- Room Features -->
-          <div class="mb-8">
-            <h2 class="text-4xl font-bold text-gray-900 mb-6">Wyposażenie</h2>
-            <div class="bg-white rounded-lg shadow-md p-8">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div
-                  v-for="feature in currentRoom.features"
-                  :key="feature"
-                  class="flex items-center"
-                >
-                  <div class="w-3 h-3 bg-blue-500 rounded-full mr-4"></div>
-                  <span class="text-gray-700 text-xl">{{ feature }}</span>
+          <!-- Booking Sidebar -->
+          <div class="lg:col-span-1">
+            <div class="bg-white rounded-lg shadow-lg p-8 sticky top-8">
+              <h3 class="text-3xl font-bold text-gray-900 mb-6 text-center">Rezerwacja</h3>
+              
+              <div class="space-y-6">
+                <div class="text-center">
+                  <p class="text-gray-600 text-lg mb-4">Zainteresowany tym pokojem?</p>
+                  <button
+                    @click="handleBooking"
+                    class="w-full bg-teal-600 text-white font-semibold py-4 px-6 rounded-lg hover:bg-teal-700 transition-colors duration-200 text-xl"
+                  >
+                    Skontaktuj się z nami
+                  </button>
+                </div>
+
+                <div class="border-t pt-6">
+                  <div class="text-center text-gray-600">
+                    <p class="mb-2">📞 Telefon:</p>
+                    <a href="tel:+48123456789" class="text-teal-600 hover:text-teal-700 font-semibold text-lg">
+                      +48 123 456 789
+                    </a>
+                  </div>
+                </div>
+
+                <div class="border-t pt-6">
+                  <div class="text-center text-gray-600">
+                    <p class="mb-2">✉️ Email:</p>
+                    <a href="mailto:rezerwacje@bakster.pl" class="text-teal-600 hover:text-teal-700 font-semibold">
+                      rezerwacje@bakster.pl
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-
-          <!-- Additional Info -->
-          <div class="bg-white rounded-lg shadow-md p-8">
-            <h2 class="text-4xl font-bold text-gray-900 mb-6">Informacje Dodatkowe</h2>
-            <div class="prose max-w-none text-gray-600">
-              <p class="mb-6 text-xl">{{ currentRoom.description }}</p>
-              <p class="text-xl">Ten pokój jest idealny dla {{ currentRoom.capacity }} {{ currentRoom.capacity === 1 ? 'osoby' : 'osób' }}
-                 i oferuje powierzchnię {{ currentRoom.size }}.
-                 {{ currentRoom.bedType }} zapewnia komfortowy sen,
-                 a wszystkie niezbędne udogodnienia sprawią, że Twój pobyt będzie niezapomniany.</p>
-            </div>
-          </div>
         </div>
 
-        <!-- Booking Sidebar -->
-        <div class="lg:col-span-1">
-          <div class="bg-white rounded-lg shadow-md p-8 sticky top-8">
-
-            <!-- Quick Info -->
-            <div class="space-y-4 mb-8">
-              <div class="flex justify-between items-center py-3 border-b border-gray-100">
-                <span class="text-gray-600 text-xl">Pojemność:</span>
-                <span class="font-semibold text-xl">{{ currentRoom.capacity }} {{ currentRoom.capacity === 1 ? 'osoba' : 'osoby' }}</span>
-              </div>
-              <div class="flex justify-between items-center py-3 border-b border-gray-100">
-                <span class="text-gray-600 text-xl">Powierzchnia:</span>
-                <span class="font-semibold text-xl">{{ currentRoom.size }}</span>
-              </div>
-              <div class="flex justify-between items-center py-3 border-b border-gray-100">
-                <span class="text-gray-600 text-xl">Łóżko:</span>
-                <span class="font-semibold text-xl">{{ currentRoom.bedType }}</span>
-              </div>
-            </div>
-
-            <!-- Booking Button -->
-            <button
-              @click="bookRoom"
-              class="w-full py-4 px-8 text-white text-xl font-semibold rounded-lg transition-all bg-secondary-500 duration-300 cursor-pointer hover:bg-secondary-500/60 hover:shadow-lg hover:transform hover:scale-105"
-
-            >
-              Skontaktuj się
-            </button>
-
-            <!-- Contact Info -->
-            <div class="mt-8 pt-8 border-t border-gray-200 text-center">
-              <p class="text-lg text-gray-600 mb-3">Potrzebujesz pomocy?</p>
-              <div class="text-lg">
-                <a href="tel:+48586752404" class="text-blue-600 hover:text-blue-800 block mb-2">tel./fax: 058 675 24 04</a>
-                <a href="tel:+48733915030" class="text-blue-600 hover:text-blue-800 block mb-2">tel. kom: +48 733 915 030</a>
-                <a href="mailto:bakster@bakster.pl" class="text-blue-600 hover:text-blue-800 block">bakster@bakster.pl</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Navigation -->
-          <div class="mt-8">
-            <router-link
-              to="/pokoje"
-              class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-200 text-lg"
-            >
-              <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-              </svg>
-              Powrót do wszystkich pokoi
-            </router-link>
-          </div>
+        <!-- Back to rooms button -->
+        <div class="mt-12 text-center">
+          <button
+            @click="router.push('/pokoje')"
+            class="inline-flex items-center px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Powrót do listy pokojów
+          </button>
         </div>
+      </div>
+    </div>
+
+    <!-- Not found state -->
+    <div v-else class="min-h-screen flex items-center justify-center">
+      <div class="text-center">
+        <div class="text-6xl mb-4">🏨</div>
+        <h1 class="text-3xl font-bold text-gray-900 mb-4">Pokój nie został znaleziony</h1>
+        <p class="text-xl text-gray-600 mb-8">Przepraszamy, ale pokój o podanym adresie nie istnieje.</p>
+        <button
+          @click="router.push('/pokoje')"
+          class="px-8 py-3 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors duration-200"
+        >
+          Zobacz wszystkie pokoje
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-/* Custom styles for better visual appeal */
-.prose p {
-  margin-bottom: 1.5rem;
-  line-height: 1.7;
+/* Custom styles for amenities content */
+:deep(.amenities-content ul) {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+:deep(.amenities-content ul > li) {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+:deep(.amenities-content li::before) {
+  content: '✓';
+  color: #0d9488;
+  font-weight: bold;
+  margin-right: 0.75rem;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+:deep(.amenities-content p) {
+  margin-bottom: 1rem;
+}
+
+:deep(.amenities-content h3) {
   font-size: 1.25rem;
-}
-
-:deep(.hero-bg) {
-  background-image: url('/img/main.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.img{
-    overflow-clip-margin: unset;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1f2937;
 }
 </style>

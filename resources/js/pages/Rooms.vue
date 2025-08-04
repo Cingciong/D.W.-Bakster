@@ -1,13 +1,17 @@
 <script setup>
-// Strona pokoi - bezpośrednie użycie komponentów
+// Strona pokoi - dynamiczne ładowanie z CMS
 import RoomCard from '../components/RoomCard.vue'
 import PageHeader from '../components/PageHeader.vue'
+import { useRooms } from '../composables/useRooms.js'
+import { onMounted } from 'vue'
 
-// Obsługa rezerwacji pokoju
-const handleRoomBooking = (roomData) => {
-  console.log('Rezerwacja pokoju:', roomData)
-  // Tutaj można dodać logikę nawigacji lub rezerwacji
-}
+// Use the rooms composable
+const { rooms, loading, error, fetchRooms } = useRooms()
+
+// Load rooms on component mount
+onMounted(async () => {
+  await fetchRooms()
+})
 
 // Function to scroll to pricing section
 const scrollToPricing = () => {
@@ -15,6 +19,22 @@ const scrollToPricing = () => {
   if (element) {
     element.scrollIntoView({ behavior: 'smooth' })
   }
+}
+
+// Room colors for variety (optional, can be removed if not needed)
+const roomColors = [
+  '#3b82f6', // blue
+  '#10b981', // green
+  '#6366f1', // indigo
+  '#059669', // emerald
+  '#7c3aed', // violet
+  '#0891b2', // cyan
+  '#f97316', // orange
+  '#dc2626'  // red
+]
+
+const getRoomColor = (index) => {
+  return roomColors[index % roomColors.length]
 }
 </script>
 
@@ -41,200 +61,42 @@ const scrollToPricing = () => {
 
     <!-- Siatka pokoi -->
     <div class="max-w-screen-2xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 gap-12">
-
-       <!-- Pokój Jednosobowy -->
-        <RoomCard
-          class="animate-fade-up animate-delay-100"
-          title="Pokój Jednosobowy"
-          description="Komfortowy pokój dla jednej osoby z widokiem na ogród. Idealny na spokojny wypoczynek nad morzem."
-          img-link="/img/1-osobowe/untitled-1.JPG"
-          color="#3b82f6"
-          room-slug="jednosobowy"
-          @book-room="handleRoomBooking"
-        >
-          <li>• 1 osoba</li>
-          <li>• 14 m²</li>
-          <li>• Łóżko pojedyncze</li>
-          <li>• Prywatna łazienka z prysznicem</li>
-          <li>• Wi-Fi</li>
-          <li>• Mini-lodówka, czajnik</li>
-          <li>• Ręczniki</li>
-          <li>• Mały zestaw kosmetyków, suszarka</li>
-          <li>• Zestaw plażowy: koc, parawan, leżak</li>
-          <li>• Bezpłatne miejsce parkingowe</li>
-          <li>• Śniadanie w cenie</li>
-        </RoomCard>
-
-        <!-- Pokój Dwuosobowy -->
-        <RoomCard
-          class="animate-fade-up animate-delay-200"
-          title="Pokój Dwuosobowy"
-          description="Przytulny pokój dla dwóch osób z balkonem i podwójnym łóżkiem."
-          img-link="/img/2-osobowe/untitled-7.JPG"
-          color="#10b981"
-          room-slug="dwuosobowy"
-          @book-room="handleRoomBooking"
-        >
-          <li>• 2 osoby</li>
-          <li>• 16–23 m²</li>
-          <li>• Łóżko podwójne</li>
-          <li>• Prywatna łazienka z prysznicem</li>
-          <li>• Wi-Fi</li>
-          <li>• Mini-lodówka, czajnik</li>
-          <li>• Ręczniki</li>
-          <li>• Mały zestaw kosmetyków, suszarka</li>
-          <li>• Balkon ze stoliczkiem i krzesłami</li>
-          <li>• Zestaw plażowy: koc, parawan, leżak</li>
-          <li>• Bezpłatne miejsce parkingowe</li>
-          <li>• Śniadanie w cenie</li>
-        </RoomCard>
-
-        <!-- Pokój Dwuosobowy Economy -->
-        <RoomCard
-          class="animate-fade-up animate-delay-300"
-          title="Pokój Dwuosobowy Economy"
-          description="Funkcjonalny pokój dla dwóch osób z podstawowym wyposażeniem i dostępem do wszystkich udogodnień."
-          img-link="/img/2-osobowy-economy/untitled-2.JPG"
-          color="#6366f1"
-          room-slug="dwuosobowy-economy"
-          @book-room="handleRoomBooking"
-        >
-          <li>• 2 osoby</li>
-          <li>• 16 m²</li>
-          <li>• Łóżko podwójne</li>
-          <li>• Prywatna łazienka z prysznicem</li>
-          <li>• Wi-Fi</li>
-          <li>• Mini-lodówka, czajnik</li>
-          <li>• Ręczniki</li>
-          <li>• Mały zestaw kosmetyków, suszarka</li>
-          <li>• Zestaw plażowy: koc, parawan, leżak</li>
-          <li>• Bezpłatne miejsce parkingowe</li>
-          <li>• Śniadanie w cenie</li>
-        </RoomCard>
-
-        <!-- Pokój Trzyosobowy -->
-        <RoomCard
-          class="animate-fade-up animate-delay-500"
-          title="Pokój Trzyosobowy"
-          description="Przestronny pokój dla trzech osób z balkonem i wygodnymi łóżkami."
-          img-link="/img/3-osobowy/untitled-6.JPG"
-          color="#059669"
-          room-slug="trzyosobowy"
-          @book-room="handleRoomBooking"
-        >
-          <li>• 3 osoby</li>
-          <li>• 29 m²</li>
-          <li>• Łóżko podwójne + łóżko pojedyncze</li>
-          <li>• Prywatna łazienka z prysznicem</li>
-          <li>• Wi-Fi</li>
-          <li>• Mini-lodówka, czajnik</li>
-          <li>• Ręczniki</li>
-          <li>• Mały zestaw kosmetyków, suszarka</li>
-          <li>• Balkon ze stoliczkiem i krzesłami</li>
-          <li>• Zestaw plażowy: koc, parawan, leżak</li>
-          <li>• Bezpłatne miejsce parkingowe</li>
-          <li>• Śniadanie w cenie</li>
-        </RoomCard>
-
-        <!-- Pokój Trzyosobowy Standard -->
-        <RoomCard
-          class="animate-fade-up animate-delay-700"
-          title="Pokój Trzyosobowy Standard"
-          description="Wygodny pokój dla trzech osób z większą przestrzenią i lepszym standardem wyposażenia."
-          img-link="/img/3-osobowy-standard/untitled-1.JPG"
-          color="#7c3aed"
-          room-slug="trzyosobowy-standard"
-          @book-room="handleRoomBooking"
-        >
-          <li>• 3 osoby</li>
-          <li>• ok. 32–35 m²</li>
-          <li>• Łóżko podwójne + łóżko pojedyncze</li>
-          <li>• Prywatna łazienka z prysznicem</li>
-          <li>• Wi-Fi</li>
-          <li>• Mini-lodówka, czajnik</li>
-          <li>• Ręczniki</li>
-          <li>• Mały zestaw kosmetyków, suszarka</li>
-          <li>• Balkon ze stoliczkiem i krzesłami</li>
-          <li>• Zestaw plażowy: koc, parawan, leżak</li>
-          <li>• Bezpłatne miejsce parkingowe</li>
-          <li>• Śniadanie w cenie</li>
-        </RoomCard>
-
-        <!-- Pokój Trzyosobowy z Widokiem na Morze -->
-        <RoomCard
-          class="animate-fade-up animate-delay-[900ms]"
-          title="Pokój Trzyosobowy z Widokiem na Morze"
-          description="Ekskluzywny pokój z balkonem i pięknym widokiem na Bałtyk."
-          img-link="/img/3-osobowe-widok/untitled-4.JPG"
-          color="#0891b2"
-          room-slug="trzyosobowy-morze"
-          @book-room="handleRoomBooking"
-        >
-          <li>• 3 osoby</li>
-          <li>• 35–40 m²</li>
-          <li>• Łóżko podwójne + pojedyncze</li>
-          <li>• Prywatna łazienka z przysznicem</li>
-          <li>• Wi-Fi</li>
-          <li>• Mini-lodówka, czajnik</li>
-          <li>• Ręczniki</li>
-          <li>• Mały zestaw kosmetyków, suszarka</li>
-          <li>• Balkon ze stoliczkiem i krzesłami</li>
-          <li>• Zestaw plażowy: koc, parawan, leżak</li>
-          <li>• Bezpłatne miejsce parkingowe</li>
-          <li>• Śniadanie w cenie</li>
-        </RoomCard>
-
-        <!-- Pokój Czteroosobowy -->
-        <RoomCard
-          class="animate-fade-up animate-delay-[1100ms]"
-          title="Pokój Czteroosobowy"
-          description="Idealny dla rodzin – przestronny pokój z balkonem i kompletnym wyposażeniem."
-          img-link="/img/4-osobowe/untitled-1.JPG"
-          color="#f97316"
-          room-slug="czteroosobowy"
-          @book-room="handleRoomBooking"
-        >
-          <li>• 4 osoby</li>
-          <li>• 29–32 m²</li>
-          <li>• Łóżko podwójne + dwa pojedyncze</li>
-          <li>• Prywatna łazienka z prysznicem</li>
-          <li>• Wi-Fi</li>
-          <li>• Lodówka, czajnik</li>
-          <li>• Ręczniki</li>
-          <li>• Mały zestaw kosmetyków</li>
-          <li>• Balkon ze stoliczkiem i krzesłami</li>
-          <li>• Zestaw plażowy: koc, parawan, leżak</li>
-          <li>• Bezpłatne miejsce parkingowe</li>
-          <li>• Śniadanie w cenie</li>
-        </RoomCard>
-
-        <!-- Apartament Dwupoziomowy -->
-        <RoomCard
-          class="animate-fade-up animate-delay-[1300ms]"
-          title="Apartament Dwupoziomowy"
-          description="Luksusowy apartament z pięknym widokiem na morze – idealny na dłuższy pobyt lub rodzinne wakacje."
-          img-link="/img/apartament/untitled-7.JPG"
-          color="#dc2626"
-          room-slug="apartament-dwupoziomowy"
-          @book-room="handleRoomBooking"
-        >
-          <li>• 4–6 osób</li>
-          <li>• ok. 60–80 m²</li>
-          <li>• 2 poziomy: sypialnia + salon z kuchnią</li>
-          <li>• Łóżko podwójne + 2 pojedyncze</li>
-          <li>• Aneks kuchenny, jadalnia, balkon</li>
-          <li>• 2 łazienki (w tym jedna z narożną wanną)</li>
-          <li>• Wi-Fi</li>
-          <li>• Lodówka, czajnik, pełne wyposażenie</li>
-          <li>• Ręczniki</li>
-          <li>• Mały zestaw kosmetyków</li>
-          <li>• Widok na morze z balkonu i okien dachowych</li>
-          <li>• Bezpłatne miejsce parkingowe</li>
-          <li>• Śniadanie w cenie</li>
-        </RoomCard>
-
+      
+      <!-- Loading state -->
+      <div v-if="loading" class="flex justify-center items-center py-20">
+        <div class="animate-spin rounded-full h-16 w-16 border-b-2 border-teal-600"></div>
+        <span class="ml-4 text-xl text-gray-600">Ładowanie pokojów...</span>
       </div>
+
+      <!-- Error state -->
+      <div v-else-if="error" class="bg-red-50 border border-red-200 rounded-lg p-8 text-center">
+        <div class="text-red-600 text-xl mb-4">⚠️ Wystąpił błąd</div>
+        <p class="text-red-700">{{ error }}</p>
+        <button 
+          @click="fetchRooms" 
+          class="mt-4 px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+        >
+          Spróbuj ponownie
+        </button>
+      </div>
+
+      <!-- Rooms grid -->
+      <div v-else-if="rooms.length > 0" class="grid grid-cols-1 gap-12">
+        <RoomCard
+          v-for="(room, index) in rooms"
+          :key="room.id"
+          :room-data="room"
+          :color="getRoomColor(index)"
+          :class="`animate-fade-up animate-delay-[${(index + 1) * 100}ms]`"
+        />
+      </div>
+
+      <!-- Empty state -->
+      <div v-else class="bg-gray-50 border border-gray-200 rounded-lg p-8 text-center">
+        <div class="text-gray-400 text-6xl mb-4">🏨</div>
+        <p class="text-xl text-gray-600">Brak dostępnych pokojów w systemie.</p>
+      </div>
+
     </div>
     <!-- Cennik -->
       <div id="cennik-section" class="mt-16 max-w-screen-2xl mx-auto px-4">

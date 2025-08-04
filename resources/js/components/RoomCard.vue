@@ -1,48 +1,34 @@
 <script setup>
 import { useRouter } from 'vue-router'
-import { onMounted } from 'vue'
+import { computed } from 'vue'
 
-// Define simplified props for the room card component
+// Define props for the room card component - now accepting CMS data
 const props = defineProps({
-  title: {
-    type: String,
+  // CMS room data
+  roomData: {
+    type: Object,
     required: true
   },
-  description: {
-    type: String,
-    required: true
-  },
-  imgLink: {
-    type: String,
-    required: true
-  },
+  // Optional color override
   color: {
     type: String,
-    default: 'blue'
-  },
-  link: {
-    type: String,
-    default: '/booking'
-  },
-  roomSlug: {
-    type: String,
-    required: false
+    default: '#3b82f6'
   }
 })
 
 const router = useRouter()
 
+// Computed properties from room data
+const title = computed(() => props.roomData.name || '')
+const description = computed(() => props.roomData.short_description || props.roomData.description || '')
+const imgLink = computed(() => props.roomData.main_image_url || '/img/default-room.jpg')
+const amenitiesHtml = computed(() => props.roomData.amenities_html || '')
+const roomSlug = computed(() => props.roomData.slug || '')
+
 const handleBooking = () => {
-  if (props.roomSlug) {
+  if (roomSlug.value) {
     // Navigate to room detail page
-    router.push(`/pokoj/${props.roomSlug}`)
-  } else {
-    // Fallback to emit event
-    emit('book-room', {
-      title: props.title,
-      price: props.price,
-      link: props.link
-    })
+    router.push(`/pokoj/${roomSlug.value}`)
   }
 }
 </script>
@@ -64,8 +50,15 @@ const handleBooking = () => {
       <h3 class="text-5xl font-bold text-gray-900 mb-6">{{ title }}</h3>
       <p class="text-2xl text-gray-600 mb-8 leading-relaxed">{{ description }}</p>
 
-      <!-- Custom HTML Content Slot -->
-      <ul class="text-xl text-gray-700 space-y-3 mb-8 flex-grow">
+      <!-- Amenities from CMS -->
+      <div 
+        v-if="amenitiesHtml" 
+        class="text-xl text-gray-700 space-y-3 mb-8 flex-grow"
+        v-html="amenitiesHtml"
+      ></div>
+      
+      <!-- Fallback for slot content (legacy support) -->
+      <ul v-else class="text-xl text-gray-700 space-y-3 mb-8 flex-grow">
         <slot></slot>
       </ul>
 
