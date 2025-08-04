@@ -39,16 +39,16 @@ const selectImage = (index) => {
 
 const previousImage = () => {
   if (roomImages.value.length > 0) {
-    selectedImageIndex.value = selectedImageIndex.value > 0 
-      ? selectedImageIndex.value - 1 
+    selectedImageIndex.value = selectedImageIndex.value > 0
+      ? selectedImageIndex.value - 1
       : roomImages.value.length - 1
   }
 }
 
 const nextImage = () => {
   if (roomImages.value.length > 0) {
-    selectedImageIndex.value = selectedImageIndex.value < roomImages.value.length - 1 
-      ? selectedImageIndex.value + 1 
+    selectedImageIndex.value = selectedImageIndex.value < roomImages.value.length - 1
+      ? selectedImageIndex.value + 1
       : 0
   }
 }
@@ -62,8 +62,16 @@ const handleBooking = () => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-yellow-50">
-    
+  <div v-if="currentRoom" class="min-h-screen bg-yellow-50">
+    <!-- Hero Section -->
+    <PageHeader
+      :title="currentRoom.title"
+      :description="currentRoom.description"
+    />
+</div>
+
+    <div class="min-h-screen bg-yellow-50">
+
     <!-- Loading state -->
     <div v-if="loading" class="flex justify-center items-center py-20">
       <div class="animate-spin rounded-full h-16 w-16 border-b-2 border-teal-600"></div>
@@ -75,14 +83,14 @@ const handleBooking = () => {
       <div class="bg-red-50 border border-red-200 rounded-lg p-8 text-center max-w-md">
         <div class="text-red-600 text-xl mb-4">⚠️ Wystąpił błąd</div>
         <p class="text-red-700 mb-4">{{ error }}</p>
-        <button 
-          @click="() => fetchRoom(route.params.slug)" 
+        <button
+          @click="() => fetchRoom(route.params.slug)"
           class="px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors mr-4"
         >
           Spróbuj ponownie
         </button>
-        <button 
-          @click="router.push('/pokoje')" 
+        <button
+          @click="router.push('/pokoje')"
           class="px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
         >
           Powrót do pokojów
@@ -115,7 +123,7 @@ const handleBooking = () => {
                     :alt="room.name"
                     class="w-full h-full object-cover"
                   />
-                  
+
                   <!-- Navigation arrows -->
                   <button
                     v-if="roomImages.length > 1"
@@ -126,7 +134,7 @@ const handleBooking = () => {
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                     </svg>
                   </button>
-                  
+
                   <button
                     v-if="roomImages.length > 1"
                     @click="nextImage"
@@ -178,7 +186,7 @@ const handleBooking = () => {
             <div v-if="amenitiesHtml" class="mb-8">
               <h2 class="text-4xl font-bold text-gray-900 mb-6">Udogodnienia</h2>
               <div class="bg-white rounded-lg p-8 shadow-md">
-                <div 
+                <div
                   class="amenities-content text-lg text-gray-700"
                   v-html="amenitiesHtml"
                 ></div>
@@ -190,7 +198,7 @@ const handleBooking = () => {
           <div class="lg:col-span-1">
             <div class="bg-white rounded-lg shadow-lg p-8 sticky top-8">
               <h3 class="text-3xl font-bold text-gray-900 mb-6 text-center">Rezerwacja</h3>
-              
+
               <div class="space-y-6">
                 <div class="text-center">
                   <p class="text-gray-600 text-lg mb-4">Zainteresowany tym pokojem?</p>
